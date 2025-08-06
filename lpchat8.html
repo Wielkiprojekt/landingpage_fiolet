@@ -18,8 +18,25 @@
       .course-grid {
         grid-template-columns: 1fr !important;
       }
-      .benefit-box {
-        font-size: 0.85rem;
+      .benefit-small-mobile {
+        font-size: 0.75rem;
+      }
+      .benefit-title-mobile {
+        font-size: 0.875rem !important;
+        line-height: 1.2 !important;
+      }
+      .logo-desktop {
+        display: none;
+      }
+      .logo-mobile {
+        display: block;
+        margin: 1rem auto;
+        height: 80px;
+      }
+    }
+    @media (min-width: 769px) {
+      .logo-mobile {
+        display: none;
       }
     }
   </style>
@@ -30,9 +47,10 @@
     <div class="max-w-6xl mx-auto relative">
       <div class="relative mb-6">
         <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight text-center drop-shadow-xl">
-          Jak łatwo wygrać z odchudzaniem.<br> Zmień życie dzięki hipnozie
+          Jak łatwo wygrać z odchudzaniem.<br> Zmień życie dzięki hipnozie.
         </h2>
-        <img src="beztla2.png" alt="Hypnobalance Logo" class="h-60 w-auto absolute right-0 top-1/2 transform -translate-y-1/2 hidden md:block">
+        <img src="beztla2.png" alt="Hypnobalance Logo" class="h-60 w-auto absolute right-[-40px] top-1/2 transform -translate-y-1/2 logo-desktop">
+        <img src="beztla2.png" alt="Hypnobalance Logo" class="logo-mobile">
       </div>
       <p class="text-xl text-white text-center mb-8 font-medium">
         Trzy nagrania hipnotyczne, które pomogą Ci przestać sabotować swoje wysiłki oraz pomogą zbudować zdrowe nawyki i pokochać aktywność fizyczną.
@@ -52,43 +70,41 @@
         Co zyskasz dzięki tym nagraniom?
       </h2>
       <div class="grid md:grid-cols-2 benefits-grid gap-8">
-        <div class="bg-white rounded-xl shadow-md p-6 benefit-box">
-          <h3 class="text-xl font-bold text-purple-700">✅ 1. Dotarcie do źródeł trudności w odchudzaniu</h3>
+        <div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
+          <h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 1. Dotarcie do źródeł trudności w odchudzaniu</h3>
           <p class="mt-2">Odkryjesz nieświadome mechanizmy, które sabotują Twoje działania.</p>
           <p class="mt-1">Zyskasz nowe zrozumienie siebie – przestaniesz się obwiniać, a zaczniesz wspierać.</p>
         </div>
-        <div class="bg-white rounded-xl shadow-md p-6 benefit-box">
-          <h3 class="text-xl font-bold text-purple-700">✅ 2. Naturalna zmiana nawyków żywieniowych</h3>
+        <div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
+          <h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 2. Naturalna zmiana nawyków żywieniowych</h3>
           <p class="mt-2">Zaczniesz podejmować zdrowsze wybory bez wysiłku i kontroli – Twoja podświadomość zrobi to za Ciebie.</p>
           <p class="mt-1">Przestaniesz objadać się impulsywnie, odczujesz więcej sytości i lekkości po jedzeniu.</p>
         </div>
-        <div class="bg-white rounded-xl shadow-md p-6 benefit-box">
-          <h3 class="text-xl font-bold text-purple-700">✅ 3. Większa motywacja do ruchu i działania</h3>
+        <div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
+          <h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 3. Większa motywacja do ruchu i działania</h3>
           <p class="mt-2">Zamiast zmuszać się do ćwiczeń, poczujesz autentyczną chęć ruchu – bo Twoje ciało zacznie samo się o to dopominać.</p>
           <p class="mt-1">Aktywność fizyczna stanie się źródłem przyjemności, nie karą.</p>
         </div>
-        <div class="bg-white rounded-xl shadow-md p-6 benefit-box">
-          <h3 class="text-xl font-bold text-purple-700">✅ 4. Głębokie odprężenie i spokój emocjonalny</h3>
+        <div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
+          <h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 4. Głębokie odprężenie i spokój</h3>
           <p class="mt-2">Nagrania hipnotyczne działają jak terapeutyczny relaks dla ciała i umysłu – obniżają poziom stresu, napięcia i niepokoju.</p>
           <p class="mt-1">Dzięki temu łatwiej będzie Ci podejmować zdrowe decyzje bez chaosu emocji.</p>
         </div>
-        <div class="bg-white rounded-xl shadow-md p-6 benefit-box">
-          <h3 class="text-xl font-bold text-purple-700">✅ 5. Zwiększenie wiary w siebie i wytrwałości</h3>
+        <div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
+          <h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 5. Większa wiara w siebie i wytrwałość</h3>
           <p class="mt-2">Zaczniesz widzieć siebie jako osobę, która potrafi osiągnąć trwałą zmianę, nawet jeśli wcześniej się nie udawało.</p>
           <p class="mt-1">Rozwiniesz w sobie nową tożsamość – osoby, która dba o siebie z lekkością i troską.</p>
         </div>
-        <div class="bg-white rounded-xl shadow-md p-6 benefit-box">
-          <h3 class="text-xl font-bold text-purple-700">✅ 6. Zmiana relacji z własnym ciałem</h3>
+        <div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
+          <h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 6. Zmiana relacji z własnym ciałem</h3>
           <p class="mt-2">Zamiast patrzeć na siebie z krytyką i niechęcią, zaczniesz budować relację opartą na akceptacji, szacunku i wdzięczności.</p>
           <p class="mt-1">To właśnie taka relacja z ciałem pozwala podejmować lepsze decyzje, bez presji i wstydu.</p>
         </div>
       </div>
     </div>
   </section>
-</body>
-</html>
 
-  <!-- What You Get Section -->
+<!-- What You Get Section -->
   <section class="bg-white py-20 px-6 text-gray-800">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl font-extrabold text-center text-purple-800 mb-6">Co otrzymujesz w kursie?</h2>
@@ -154,4 +170,3 @@
   </footer>
 </body>
 </html>
-
