@@ -263,53 +263,37 @@
       </article>
     </div>
 
-   <!-- Sekcja do wklejenia obok istniejącego bloku "Podsumowanie wartości + CTA" -->
-<section class="py-16">
+   <section class="py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Dwie kolumny: po lewej karta podsumowania, po prawej grafika -->
     <div class="grid md:grid-cols-2 gap-8 items-stretch">
 
-      <!-- LEWA: Podsumowanie wartości + CTA (Twoja istniejąca karta) -->
-<div class="max-w-3xl mx-auto mt-10">
-  <div class="rounded-2xl p-6 md:p-8 text-gray-900 bg-gradient-to-r from-yellow-300 to-amber-400 shadow-2xl text-center">
-    <h3 class="text-2xl mx-auto font-extrabold text-purple-900 mb-3">
-      Łączna wartość bonusów: 325 zł
-    </h3>
-    <p class="text-lg font-bold mb-3">
-      👉 Razem to nie są przypadkowe dodatki.<br>
-      To system, w którym każdy element uzupełnia pozostałe:
-    </p>
-    <ul class="list-disc list-inside text-left text-lg pl-24 mb-2 leading-relaxed">
-      <li>Nagrania zmieniają Twoje nastawienie podświadome.</li>
-      <li>Ebook i quiz dają Ci świadomość i kierunek.</li>
-      <li>Trackery dbają o konsekwencję.</li>
-      <li>Afirmacje i poranna aktywacja podtrzymują Twoją energię każdego dnia.</li>
-    </ul>
+      <!-- Lewa sekcja -->
+      <div class="rounded-2xl p-6 md:p-8 text-gray-900 bg-gradient-to-r from-yellow-300 to-amber-400 shadow-2xl flex flex-col">
+        <!-- Twoja treść karty -->
+        <h3 class="text-2xl font-extrabold text-purple-900 mb-3 text-center">Łączna wartość bonusów: 325 zł</h3>
+        <ul class="text-left list-disc list-inside text-lg leading-relaxed mb-6">
+          <li>Nagrania zmieniają Twoje nastawienie podświadome.</li>
+          <li>Ebook i quiz dają Ci świadomość i kierunek.</li>
+          <li>Trackery dbają o konsekwencję.</li>
+          <li>Afirmacje i poranna aktywacja podtrzymują Twoją energię każdego dnia.</li>
+        </ul>
+        <p class="text-lg mb-6 text-center">Dzięki temu nie tylko zaczynasz… ale wreszcie idziesz do końca.</p>
+        <p class="text-xl font-extrabold text-green-700 text-center mb-6">A teraz dostajesz je wszystkie ZA DARMO przy zakupie kursu!</p>
+        <div class="text-center mt-auto">
+          <a href="#purchase" class="inline-block bg-purple-800 text-white font-bold px-12 py-6 text-lg rounded-full shadow-xl hover:bg-purple-900 transition transform hover:scale-105">
+            Kup teraz z bonusami – tylko 97 zł
+          </a>
+        </div>
+      </div>
 
-    <p class="text-lg mb-2">
-      Dzięki temu nie tylko zaczynasz… ale wreszcie idziesz do końca.
-    </p>
+      <!-- Prawa sekcja z grafiką -->
+      <div class="rounded-2xl overflow-hidden shadow-2xl flex">
+        <img src="okladka1.png" alt="Okładka kursu" class="w-full h-full object-cover" />
+      </div>
 
-    <p class="text-xl font-extrabold text-green-700 mb-6">
-      A teraz dostajesz je wszystkie ZA DARMO przy zakupie kursu!
-    </p>
-    <a href="#purchase"
-      class="inline-block bg-purple-800 text-white font-bold px-8 py-4 rounded-full shadow-xl hover:bg-purple-900 transition transform hover:scale-105">
-      Kup teraz z bonusami – tylko 97 zł
-    </a>
+    </div>
   </div>
-</div>
-<!-- PRAWA: Grafika o tej samej wysokości co karta -->
-      <figure class="rounded-2xl overflow-hidden shadow-2xl h-full">
-        <!-- Po podmianie na serwerze ustaw ścieżkę do okladka1.png -->
-        <img src="okladka1.png" alt="Okładka / grafika kursu" class="w-full h-full object-cover" />
-      </figure>
-  </section>
-  <footer class="bg-purple-900 text-white text-center py-6 border-t mt-12">
-    <p>&copy; 2025 Hypnobalance.</p>
-  </footer>
-</body>
-</html>
+</section>
 
   </section>
   <footer class="bg-purple-900 text-white text-center py-6 border-t mt-12">
@@ -317,6 +301,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
