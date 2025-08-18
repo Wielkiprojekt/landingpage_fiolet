@@ -264,56 +264,78 @@
     </div>
 
 <section class="py-16">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-2 gap-8 items-stretch">
-      
-      <!-- LEWA KOLUMNA -->
-      <div class="rounded-2xl p-6 md:p-8 text-gray-900 bg-gradient-to-r from-yellow-300 to-amber-400 shadow-2xl flex flex-col justify-between">
-        <div>
-          <h3 class="text-2xl font-extrabold text-purple-900 mb-3 text-center">Łączna wartość bonusów: 325 zł</h3>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-8 items-start">
 
-          <ul class="text-left list-disc list-inside text-lg leading-relaxed mb-4">
-            <li>Nagrania zmieniają Twoje nastawienie podświadome.</li>
-            <li>Ebook i quiz dają Ci świadomość i kierunek.</li>
-            <li>Trackery dbają o konsekwencję.</li>
-            <li>Afirmacje i poranna aktywacja podtrzymują Twoją energię każdego dnia.</li>
-          </ul>
+      <!-- LEWA: naturalna wysokość, bez h-full i bez flex -->
+      <div id="summaryCard"
+           class="rounded-2xl p-6 md:p-8 text-gray-900 bg-gradient-to-r from-yellow-300 to-amber-400 shadow-2xl">
+        <h3 class="text-2xl font-extrabold text-purple-900 mb-3 text-center">
+          Łączna wartość bonusów: 325 zł
+        </h3>
 
-          <p class="text-lg mb-4 text-center">
-            Dzięki temu nie tylko zaczynasz… ale wreszcie idziesz do końca.
-          </p>
-        </div>
+        <ul class="text-left list-disc list-inside text-lg leading-relaxed mb-4">
+          <li>Nagrania zmieniają Twoje nastawienie podświadome.</li>
+          <li>Ebook i quiz dają Ci świadomość i kierunek.</li>
+          <li>Trackery dbają o konsekwencję.</li>
+          <li>Afirmacje i poranna aktywacja podtrzymują Twoją energię każdego dnia.</li>
+        </ul>
 
-        <div>
-          <p class="text-xl font-extrabold text-green-700 text-center mb-4">
-            A teraz dostajesz je wszystkie ZA DARMO przy zakupie kursu!
-          </p>
+        <p class="text-lg mb-4 text-center">
+          Dzięki temu nie tylko zaczynasz… ale wreszcie idziesz do końca.
+        </p>
 
-          <div class="text-center">
-            <a href="#purchase"
-               class="inline-block bg-purple-800 text-white font-bold px-12 py-6 text-lg rounded-full shadow-xl hover:bg-purple-900 transition transform hover:scale-105">
-              Kup teraz z bonusami – tylko 97 zł
-            </a>
-          </div>
+        <p class="text-xl font-extrabold text-green-700 text-center mb-4">
+          A teraz dostajesz je wszystkie ZA DARMO przy zakupie kursu!
+        </p>
+
+        <div class="text-center">
+          <a href="#purchase"
+             class="inline-block bg-purple-800 text-white font-bold px-12 py-6 text-lg rounded-full shadow-xl hover:bg-purple-900 transition transform hover:scale-105">
+            Kup teraz z bonusami – tylko 97 zł
+          </a>
         </div>
       </div>
 
-      <!-- PRAWA KOLUMNA (grafika dopasowana do wysokości lewej sekcji) -->
-      <div class="flex justify-center items-stretch">
-        <img src="okladka1.png" alt="Okładka / grafika kursu"
-             class="h-full w-auto object-contain rounded-2xl shadow-2xl" />
-      </div>
+      <!-- PRAWA: grafika, wysokość ustawiamy JS-em na równą lewej kolumnie -->
+      <figure class="rounded-2xl overflow-hidden shadow-2xl">
+        <img id="summaryImage" src="okladka1.png" alt="Okładka / grafika kursu"
+             class="w-full object-contain block" />
+      </figure>
 
     </div>
   </div>
 </section>
 
+<script>
+  // Dopasuj wysokość grafiki do wysokości lewej karty (tylko zmniejszanie)
+  (function () {
+    const card = document.getElementById('summaryCard');
+    const img  = document.getElementById('summaryImage');
+
+    function syncHeight() {
+      if (!card || !img) return;
+      const h = card.offsetHeight;          // naturalna wysokość lewej sekcji
+      img.style.height = h + 'px';          // dopasuj obrazek
+      img.style.width  = '100%';
+      img.style.objectFit = 'contain';      // zachowaj proporcje (bez przycinania)
+    }
+
+    window.addEventListener('load', syncHeight);
+    window.addEventListener('resize', syncHeight);
+    // opcjonalnie, gdyby treść karty się zmieniała dynamicznie:
+    new ResizeObserver(syncHeight).observe(card);
+  })();
+</script>
+
+
   </section>
   <footer class="bg-purple-900 text-white text-center py-6 border-t mt-12">
-    <p>&copy; 2025 Hypnobalance.!!!</p>
+    <p>&copy; 2025 Hypnobalance.#</p>
   </footer>
 </body>
 </html>
+
 
 
 
