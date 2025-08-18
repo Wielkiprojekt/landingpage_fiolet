@@ -265,11 +265,10 @@
 
 <section class="py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Ta klasa sprawia, że obie kolumny mają identyczną wysokość -->
-    <div class="grid md:grid-cols-2 gap-8 items-stretch">
-
-      <!-- LEWA: Podsumowanie wartości + CTA (bez mt-auto!) -->
-      <div class="rounded-2xl p-6 md:p-8 text-gray-900 bg-gradient-to-r from-yellow-300 to-amber-400 shadow-2xl flex flex-col">
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      
+      <!-- LEWA KOLUMNA -->
+      <div class="rounded-2xl p-6 md:p-8 text-gray-900 bg-gradient-to-r from-yellow-300 to-amber-400 shadow-2xl">
         <h3 class="text-2xl font-extrabold text-purple-900 mb-3 text-center">Łączna wartość bonusów: 325 zł</h3>
 
         <ul class="text-left list-disc list-inside text-lg leading-relaxed mb-4">
@@ -287,8 +286,7 @@
           A teraz dostajesz je wszystkie ZA DARMO przy zakupie kursu!
         </p>
 
-        <!-- zamiast mt-auto daj mały odstęp -->
-        <div class="text-center mt-4">
+        <div class="text-center">
           <a href="#purchase"
              class="inline-block bg-purple-800 text-white font-bold px-12 py-6 text-lg rounded-full shadow-xl hover:bg-purple-900 transition transform hover:scale-105">
             Kup teraz z bonusami – tylko 97 zł
@@ -296,11 +294,11 @@
         </div>
       </div>
 
-      <!-- PRAWA: grafika dopasowana wysokością do lewej kolumny -->
-      <figure class="rounded-2xl overflow-hidden shadow-2xl h-full flex">
+      <!-- PRAWA KOLUMNA (grafika dopasowana do wysokości lewej sekcji) -->
+      <div class="flex justify-center items-start">
         <img src="okladka1.png" alt="Okładka / grafika kursu"
-             class="w-full h-full object-contain" />
-      </figure>
+             class="w-full h-auto max-h-full object-contain rounded-2xl shadow-2xl" />
+      </div>
 
     </div>
   </div>
@@ -308,10 +306,11 @@
 
   </section>
   <footer class="bg-purple-900 text-white text-center py-6 border-t mt-12">
-    <p>&copy; 2025 Hypnobalance.</p>
+    <p>&copy; 2025 Hypnobalance!.</p>
   </footer>
 </body>
 </html>
+
 
 
 
