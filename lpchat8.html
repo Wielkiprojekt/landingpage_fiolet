@@ -267,9 +267,15 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid md:grid-cols-2 gap-8 items-start">
 
-      <!-- LEWA: naturalna wysokość, bez h-full i bez flex -->
+      <!-- PRAWA grafika - NA MOBILE ma być pierwsza -->
+      <figure class="rounded-2xl overflow-hidden shadow-2xl order-1 md:order-2">
+        <img id="summaryImage" src="okladka1.png" alt="Okładka / grafika kursu"
+             class="w-full object-contain block" />
+      </figure>
+
+      <!-- LEWA sekcja - NA MOBILE ma być druga -->
       <div id="summaryCard"
-           class="rounded-2xl p-6 md:p-8 text-gray-900 bg-gradient-to-r from-yellow-300 to-amber-400 shadow-2xl">
+           class="rounded-2xl p-6 md:p-8 text-gray-900 bg-gradient-to-r from-yellow-300 to-amber-400 shadow-2xl order-2 md:order-1">
         <h3 class="text-2xl font-extrabold text-purple-900 mb-3 text-center">
           Łączna wartość bonusów: 325 zł
         </h3>
@@ -296,12 +302,6 @@
           </a>
         </div>
       </div>
-
-      <!-- PRAWA: grafika, wysokość ustawiamy JS-em na równą lewej kolumnie -->
-      <figure class="rounded-2xl overflow-hidden shadow-2xl">
-        <img id="summaryImage" src="okladka1.png" alt="Okładka / grafika kursu"
-             class="w-full object-contain block" />
-      </figure>
 
     </div>
   </div>
@@ -331,10 +331,11 @@
 
   </section>
   <footer class="bg-purple-900 text-white text-center py-6 border-t mt-12">
-    <p>&copy; 2025 Hypnobalance.#</p>
+    <p>&copy; 2025 Hypnobalance.</p>
   </footer>
 </body>
 </html>
+
 
 
 
