@@ -352,12 +352,99 @@
     </div>
   </div>
 </section>
-  </section>
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Nagłówek -->
+    <div class="text-center mb-10">
+      <h2 class="text-4xl font-extrabold text-purple-900 mb-3">🔥 Twoja wyjątkowa oferta 🔥</h2>
+      <p class="text-lg text-gray-700">Prosto, jasno, bez ściemy — zobacz dokładnie co dostajesz i za ile.</p>
+    </div>
+
+    <!-- Dwie kolumny: opis + karta ceny -->
+    <div class="grid lg:grid-cols-2 gap-8 items-start">
+
+      <!-- LEWA: Co dostajesz -->
+      <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+        <h3 class="text-2xl font-bold text-purple-900 mb-4">Za pełny program 3 nagrań hipnotycznych, które pomogą Ci:</h3>
+        <ul class="space-y-3 text-gray-800">
+          <li class="flex gap-3"><span class="text-green-600">✔</span> odkryć i przełamać ukryte blokady w odchudzaniu,</li>
+          <li class="flex gap-3"><span class="text-green-600">✔</span> zmienić nawyki żywieniowe i odzyskać kontrolę nad jedzeniem,</li>
+          <li class="flex gap-3"><span class="text-green-600">✔</span> zbudować motywację do ruchu i aktywności fizycznej –</li>
+        </ul>
+        <p class="mt-5 text-lg">nie zapłacisz <span class="line-through font-semibold text-gray-500">197 zł</span>, tylko <span class="font-extrabold text-purple-900 text-2xl">97 zł</span>!</p>
+
+        <div class="mt-8">
+          <h4 class="text-xl font-bold text-purple-900 mb-3">🎁 Bonusy, które dostajesz w prezencie (wartość 325 zł):</h4>
+          <ul class="space-y-3 text-gray-800">
+            <li><span class="font-semibold">E-book „Psychologia skutecznego odchudzania”</span> – praktyczna wiedza psychologiczna, która ułatwi Ci trwałą zmianę stylu życia.</li>
+            <li><span class="font-semibold">Poranna Aktywacja Energii</span> – dodatkowe nagranie audio, które od rana napełni Cię siłą i motywacją do działania.</li>
+            <li><span class="font-semibold">Afirmacje na każdy dzień – Siła pozytywnych myśli</span> – zestaw codziennych afirmacji wzmacniających pewność siebie i konsekwencję.</li>
+            <li><span class="font-semibold">Tracker i karta zmiany nawyków na 30 dni</span> – do codziennego śledzenia postępów, emocji i nowych nawyków.</li>
+            <li><span class="font-semibold">Quiz HypnoSlim</span> – szybki test, dzięki któremu odkryjesz swoje nawyki i dowiesz się, od czego najlepiej zacząć zmianę.</li>
+          </ul>
+        </div>
+
+        <p class="mt-6 text-lg font-semibold">👉 Łącznie otrzymujesz kurs + bonusy o wartości <span class="underline">522 zł</span> – <span class="text-purple-900 font-extrabold">dziś za jedyne 97 zł</span>.</p>
+      </div>
+
+      <!-- PRAWA: Karta cenowa z licznikiem 3h -->
+      <div class="bg-gradient-to-br from-purple-700 to-indigo-800 text-white rounded-2xl shadow-2xl p-6 md:p-10 flex flex-col">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-3xl font-extrabold">Cena dziś</h3>
+          <span class="text-xs bg-white/15 px-2 py-1 rounded-full">Oferta limitowana</span>
+        </div>
+        <p class="text-white/85 mb-6">Jednorazowa płatność, natychmiastowy dostęp.</p>
+
+        <div class="bg-white/10 rounded-xl p-4 mb-6">
+          <p class="text-sm">Cena regularna: <span class="line-through font-semibold">197 zł</span></p>
+          <p class="text-5xl font-extrabold leading-none">97 zł</p>
+          <p class="text-xs text-white/80">*Najniższa cena z ostatnich 30 dni: 97 zł</p>
+        </div>
+
+        <!-- Licznik 3 godziny -->
+        <div class="text-center mb-6">
+          <p class="text-sm text-white/80 mb-1">Oferta ważna jeszcze przez:</p>
+          <div id="deal-countdown" class="text-3xl font-extrabold tracking-wider">03:00:00</div>
+        </div>
+
+        <a href="#purchase" class="inline-block text-center bg-yellow-400 text-black font-bold px-10 py-5 rounded-full shadow-lg hover:bg-yellow-300 transition text-lg">Kup teraz — 97 zł</a>
+
+        <p class="text-white/80 text-sm mt-6">14 dni gwarancji satysfakcji — jeśli to nie dla Ciebie, zwrócimy pieniądze.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+// Licznik 3 godziny od wejścia na sekcję
+(function(){
+  const el = document.getElementById('deal-countdown');
+  if (!el) return;
+  const end = Date.now() + 3*60*60*1000; // 3h w ms
+  const pad = (n)=> String(n).padStart(2,'0');
+  function tick(){
+    const diff = end - Date.now();
+    if (diff <= 0){ el.textContent = '00:00:00'; return; }
+    const h = Math.floor(diff/3600000);
+    const m = Math.floor((diff%3600000)/60000);
+    const s = Math.floor((diff%60000)/1000);
+    el.textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+</script>
+
+
+  
   <footer class="bg-purple-900 text-white text-center py-6 border-t mt-12">
-    <p>&copy; 2025 Hypnobalance$.</p>
+    <p>&copy; 2025 Hypnobalance&.</p>
   </footer>
 </body>
 </html>
+
 
 
 
