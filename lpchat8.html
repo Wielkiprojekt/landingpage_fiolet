@@ -328,13 +328,51 @@
   })();
 </script>
 
+<section class="opinie">
+  <h2 class="opinie-title">Opinie naszych klientów</h2>
+  <div class="opinie-wrapper">
+    <img src="opinia1.png" alt="Opinia klienta 1" class="opinia-img">
+    <img src="opinia2.png" alt="Opinia klienta 2" class="opinia-img">
+  </div>
+</section>
 
+<style>
+.opinie {
+  text-align: center;
+  padding: 60px 20px;
+  background: #faf5ff; /* delikatne tło, możesz zmienić */
+}
+
+.opinie-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #3b0764; /* dopasowany fiolet */
+}
+
+.opinie-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* odstęp między grafikami */
+  flex-wrap: wrap; /* żeby działało na mobile */
+}
+
+.opinia-img {
+  max-width: 600px;  /* dopasowanie do połowy szerokości na desktopie */
+  width: 100%;       /* na mobile grafika skaluje się do szerokości ekranu */
+  height: auto;
+  border-radius: 12px; /* lekko zaokrąglone rogi */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+</style>
   </section>
   <footer class="bg-purple-900 text-white text-center py-6 border-t mt-12">
     <p>&copy; 2025 Hypnobalance.</p>
   </footer>
 </body>
 </html>
+
 
 
 
