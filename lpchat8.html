@@ -328,138 +328,35 @@
   })();
 </script>
 
-<!-- Opinie -->
-<section class="py-16 bg-purple-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-4xl font-extrabold text-center text-purple-900 mb-10">
-      Opinie naszych klientów
-    </h2>
-
-    <!-- wrapper z zaokrągleniem i overflow, żeby całość wyglądała jak jeden element -->
-    <div class="rounded-2xl overflow-hidden shadow-2xl">
-      <div class="grid grid-cols-1 md:grid-cols-2 md:gap-0 gap-4">
-        <img
-          src="opinia1.png"
-          alt="Opinia klienta 1"
-          class="block w-full h-auto"
-        />
-        <img
-          src="opinia2.png"
-          alt="Opinia klienta 2"
-          class="block w-full h-auto"
-        />
-      </div>
-    </div>
-  </div>
-</section>
-<section class="py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-<section class="bg-gradient-to-r from-purple-700 to-pink-600 py-20 px-6 text-white">
-<div class="max-w-5xl mx-auto text-center">
-<h2 class="text-4xl md:text-5xl font-extrabold mb-6">🔥 Twoja wyjątkowa oferta 🔥</h2>
-<p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
-Za pełny program 3 nagrań hipnotycznych, które pomogą Ci:
-<br>✔ odkryć i przełamać ukryte blokady w odchudzaniu,
-<br>✔ zmienić nawyki żywieniowe i odzyskać kontrolę nad jedzeniem,
-<br>✔ zbudować motywację do ruchu i aktywności fizycznej –
-<br><br>
-nie zapłacisz <span class="line-through">197 zł</span>, tylko <span class="font-extrabold text-yellow-300 text-2xl">97 zł!</span>
+<!-- Sekcja opinii: zawsze jedna pod drugą (desktop i mobile) -->
+<section class="py-16 bg-gradient-to-b from-purple-50 via-white to-purple-50">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl md:text-4xl font-extrabold text-center text-purple-900 mb-8">Opinie naszych klientów</h2>
+<p class="text-center text-gray-700 mb-10 max-w-3xl mx-auto">
+Prawdziwe wiadomości od osób, które skorzystały z HypnoSlim. Każda grafika to zestaw kilku opinii w jednym bloku.
 </p>
 
 
-<div class="bg-white text-gray-900 rounded-2xl shadow-2xl p-8 md:p-10 mb-12">
-<h3 class="text-2xl md:text-3xl font-bold text-purple-800 mb-6">🎁 Bonusy w prezencie (o wartości 325 zł)</h3>
-<ol class="space-y-4 text-left max-w-2xl mx-auto text-lg">
-<li><span class="font-bold">1.</span> E-book „Psychologia skutecznego odchudzania” – praktyczna wiedza psychologiczna, która ułatwi Ci trwałą zmianę stylu życia.</li>
-<li><span class="font-bold">2.</span> Poranna Aktywacja Energii – dodatkowe nagranie audio, które od rana napełni Cię siłą i motywacją do działania.</li>
-<li><span class="font-bold">3.</span> Afirmacje na każdy dzień – zestaw pozytywnych myśli wzmacniających pewność siebie i konsekwencję.</li>
-<li><span class="font-bold">4.</span> Tracker i karta zmiany nawyków na 30 dni – do codziennego śledzenia postępów, emocji i nowych nawyków.</li>
-<li><span class="font-bold">5.</span> Quiz HypnoSlim – szybki test, dzięki któremu odkryjesz swoje nawyki i dowiesz się, od czego najlepiej zacząć zmianę.</li>
-</ol>
+<!-- Opinia 1 -->
+<figure class="bg-white rounded-2xl shadow-xl p-3 md:p-4 mb-8">
+<img src="opinia1.png" alt="Opinia klientek — zestaw 1"
+class="w-full h-auto rounded-xl" />
+</figure>
 
 
-<p class="text-xl font-bold text-purple-900 mt-10">👉 Kurs + bonusy o wartości 522 zł – dziś za jedyne <span class="text-3xl text-pink-600 font-extrabold">97 zł</span></p>
-</div>
+<!-- Opinia 2 -->
+<figure class="bg-white rounded-2xl shadow-xl p-3 md:p-4">
+<img src="opinia2.png" alt="Opinia klientek — zestaw 2"
+class="w-full h-auto rounded-xl" />
+</figure>
 
 
-<!-- Licznik -->
-<div class="bg-black bg-opacity-30 rounded-xl inline-block px-6 py-4 mb-10">
-<p class="text-yellow-300 font-mono text-lg">Oferta ważna jeszcze przez:</p>
-<div id="countdown2" class="text-3xl font-extrabold text-yellow-300"></div>
-</div>
-
-
-<!-- CTA -->
-<a href="#purchase" class="inline-block bg-yellow-400 text-black font-bold px-12 py-5 rounded-full shadow-xl hover:bg-yellow-300 transition transform hover:scale-105 text-xl">
-Kup teraz – tylko 97 zł
-</a>
+<!-- Uwaga: jeżeli chcesz wąsko jak na screenie, użyj max-w-3xl zamiast max-w-5xl -->
 </div>
 </section>
 
 
-<script>
-// Licznik 3h
-function startCountdown2(duration, display) {
-let timer = duration, hours, minutes, seconds;
-setInterval(function () {
-hours = parseInt(timer / 3600, 10);
-minutes = parseInt((timer % 3600) / 60, 10);
-seconds = parseInt(timer % 60, 10);
-
-
-hours = hours < 10 ? "0" + hours : hours;
-minutes = minutes < 10 ? "0" + minutes : minutes;
-seconds = seconds < 10 ? "0" + seconds : seconds;
-
-
-display.textContent = hours + ":" + minutes + ":" + seconds;
-
-
-if (--timer < 0) {
-timer = 0;
-}
-}, 1000);
-}
-
-
-window.onload = function () {
-const threeHours = 60 * 60 * 3;
-const display = document.querySelector('#countdown2');
-startCountdown2(threeHours, display);
-};
-</script>
-
-
-  
-  <footer class="bg-purple-900 text-white text-center py-6 border-t mt-12">
-    <p>&copy; 2025 Hypnobalance&.</p>
-  </footer>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Sekcja Oferta -->
     
 <section class="py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -546,20 +443,6 @@ startCountdown2(threeHours, display);
   </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
