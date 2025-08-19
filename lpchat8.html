@@ -328,50 +328,37 @@
   })();
 </script>
 
-<section class="opinie">
-  <h2 class="opinie-title">Opinie naszych klientów</h2>
-  <div class="opinie-wrapper">
-    <img src="opinia1.png" alt="Opinia klienta 1" class="opinia-img">
-    <img src="opinia2.png" alt="Opinia klienta 2" class="opinia-img">
+<!-- Opinie -->
+<section class="py-16 bg-purple-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-extrabold text-center text-purple-900 mb-10">
+      Opinie naszych klientów
+    </h2>
+
+    <!-- wrapper z zaokrągleniem i overflow, żeby całość wyglądała jak jeden element -->
+    <div class="rounded-2xl overflow-hidden shadow-2xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 md:gap-0 gap-4">
+        <img
+          src="opinia1.png"
+          alt="Opinia klienta 1"
+          class="block w-full h-auto"
+        />
+        <img
+          src="opinia2.png"
+          alt="Opinia klienta 2"
+          class="block w-full h-auto"
+        />
+      </div>
+    </div>
   </div>
 </section>
-
-<style>
-.opinie {
-  text-align: center;
-  padding: 60px 20px;
-  background: #faf5ff; /* delikatne tło, możesz zmienić */
-}
-
-.opinie-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  color: #3b0764; /* dopasowany fiolet */
-}
-
-.opinie-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px; /* odstęp między grafikami */
-  flex-wrap: wrap; /* żeby działało na mobile */
-}
-
-.opinia-img {
-  max-width: 600px;  /* dopasowanie do połowy szerokości na desktopie */
-  width: 100%;       /* na mobile grafika skaluje się do szerokości ekranu */
-  height: auto;
-  border-radius: 12px; /* lekko zaokrąglone rogi */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-</style>
   </section>
   <footer class="bg-purple-900 text-white text-center py-6 border-t mt-12">
-    <p>&copy; 2025 Hypnobalance@.</p>
+    <p>&copy; 2025 Hypnobalance$.</p>
   </footer>
 </body>
 </html>
+
 
 
 
