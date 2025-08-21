@@ -40,6 +40,59 @@
       }
     }
   </style>
+
+<style>
+/* 1) Ujednolicenie szerokości sekcji na desktopie */
+@media (min-width: 1024px) {
+  :is(.max-w-3xl, .max-w-5xl, .max-w-6xl, .max-w-7xl, .max-w-screen-xl) {
+    max-width: 1440px !important;
+  }
+}
+
+/* 2) Sekcja z okładką + żółtym boxem (to jest <section class="py-16">)
+      Usuwamy jakiekolwiek tła/blur/overlays na figure, żeby nie było „drugiego” fioletu z tyłu. */
+section.py-16 figure {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none; /* cień zostawiamy na obrazie, ale nie na tle */
+}
+section.py-16 figure > * {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* 3) „Twoja wyjątkowa oferta” – kasujemy wewnętrzne fioletowe panele.
+      Zostaje sam gradient sekcji + biała karta bonusów. */
+section.bg-gradient-to-r.from-purple-700.to-pink-600 > div:not(.bg-white) {
+  background: transparent !important;
+  background-image: none !important;
+}
+section.bg-gradient-to-r.from-purple-700.to-pink-600 .absolute {
+  display: none !important;
+}
+</style>
+
+<style>
+/* --- DODATKOWE POPRAWKI (z v5) --- */
+
+/* 1) Tekst w białej karcie bonusów na całą szerokość */
+section.bg-gradient-to-r.from-purple-700.to-pink-600 .bg-white {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+section.bg-gradient-to-r.from-purple-700.to-pink-600 .bg-white ol {
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* 2) Przycisk „Kup teraz” pod licznikiem czasu */
+section.bg-gradient-to-r.from-purple-700.to-pink-600 a[href="#purchase"] {
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  text-align: center;
+}
+</style>
 </head>
 <body class="text-gray-900 font-sans">
   <!-- Hero Section -->
@@ -437,3 +490,24 @@ startCountdown2(threeHours, display);
   </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
