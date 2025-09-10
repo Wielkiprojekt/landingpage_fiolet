@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jak łatwo wygrać z odchudzaniem — Kurs Hipnozy</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jak łatwo wygrać z odchudzaniem — Kurs Hipnozy</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
     body {
       background: linear-gradient(to bottom right, #f5e1ff, #e0d4ff);
     }
@@ -40,326 +41,341 @@
       }
     }
   </style>
-
 <style>
-/* 1) Ujednolicenie szerokości sekcji na desktopie */
 @media (min-width: 1024px) {
   :is(.max-w-3xl, .max-w-5xl, .max-w-6xl, .max-w-7xl, .max-w-screen-xl) {
     max-width: 1440px !important;
   }
 }
-
-/* 2) Sekcja z okładką + żółtym boxem (to jest <section class="py-16">)
-      Usuwamy jakiekolwiek tła/blur/overlays na figure, żeby nie było „drugiego” fioletu z tyłu. */
-section.py-16 figure {
-  background: transparent !important;
-  background-image: none !important;
-  box-shadow: none; /* cień zostawiamy na obrazie, ale nie na tle */
+section.py-16 figure,
+section.py-16 figure > * { background: transparent !important; background-image: none !important; box-shadow: none; }
+section.bg-gradient-to-r.from-purple-700.to-pink-600 > div:not(.bg-white) { background: transparent !important; background-image: none !important; }
+section.bg-gradient-to-r.from-purple-700.to-pink-600 .absolute { display: none !important; }
+section.bg-gradient-to-r.from-purple-700.to-pink-600 .bg-white { max-width: 100% !important; width: 100% !important; }
+section.bg-gradient-to-r.from-purple-700.to-pink-600 .bg-white ol { max-width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; }
+section.bg-gradient-to-r.from-purple-700.to-pink-600 a[href="#purchase"] { display: block; margin: 1.5rem auto 0 auto; text-align: center; }
+@media (max-width: 767px) {
+  section.bg-gradient-to-r.from-purple-700.to-pink-600 { position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; width: 100vw; padding-left: 16px; padding-right: 16px; }
+  section.bg-gradient-to-r.from-purple-700.to-pink-600 .bg-white { width: calc(100vw - 32px) !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
+  section.bg-gradient-to-r.from-purple-700.to-pink-600 .bg-white ol { max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; padding-left: 0 !important; }
+  section.bg-gradient-to-r.from-purple-700.to-pink-600 .bg-white h3,
+  section.bg-gradient-to-r.from-purple-700.to-pink-600 .bg-white p,
+  section.bg-gradient-to-r.from-purple-700.to-pink-600 .bg-white ol,
+  section.bg-gradient-to-r.from-purple-700.to-pink-600 .bg-white li { text-align: left !important; }
+  section.bg-gradient-to-r.from-purple-700.to-pink-600 .mx-auto { margin-left: 0 !important; margin-right: 0 !important; }
+  section.relative.py-20 article .flex > div:first-child { display: none !important; }
+  section.relative.py-20 article .flex > div:last-child { width: 100% !important; }
 }
-section.py-16 figure > * {
-  background: transparent !important;
-  background-image: none !important;
+</style>
+<style>
+@media (max-width: 767px) {
+  section.relative.py-20 article .flex { display: grid !important; grid-template-columns: 1fr !important; }
+  section.relative.py-20 article .flex > div:first-child { display: block !important; margin: 0 0 0.5rem 0 !important; }
+  section.relative.py-20 article .flex > div:last-child { width: 100% !important; }
 }
-
-/* 3) „Twoja wyjątkowa oferta” – kasujemy wewnętrzne fioletowe panele.
-      Zostaje sam gradient sekcji + biała karta bonusów. */
-section.bg-gradient-to-r.from-purple-700.to-pink-600 > div:not(.bg-white) {
-  background: transparent !important;
-  background-image: none !important;
-}
-section.bg-gradient-to-r.from-purple-700.to-pink-600 .absolute {
-  display: none !important;
-}
+@media (min-width: 1024px) { #summaryCard { max-width: 760px !important; } }
 </style>
 
 <style>
-/* --- DODATKOWE POPRAWKI (z v5) --- */
-
-/* 1) Tekst w białej karcie bonusów na całą szerokość */
-section.bg-gradient-to-r.from-purple-700.to-pink-600 .bg-white {
-  max-width: 100% !important;
-  width: 100% !important;
-}
-section.bg-gradient-to-r.from-purple-700.to-pink-600 .bg-white ol {
-  max-width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-/* 2) Przycisk „Kup teraz” pod licznikiem czasu */
-section.bg-gradient-to-r.from-purple-700.to-pink-600 a[href="#purchase"] {
-  display: block;
-  margin: 1.5rem auto 0 auto;
-  text-align: center;
-}
+  /* Tło sekcji – domyślnie desktop */
+  #duplicate-offer {
+    background-image: url('tlodlasekcji.png');
+  }
+  /* Mobile: pionowa grafika 1080x1600 */
+  @media (max-width: 768px) {
+    #duplicate-offer {
+      background-image: url('offer_bg_mobile.jpg');
+      background-size: contain;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-color: #ffffff;
+    }
+  }
 </style>
+
 </head>
 <body class="text-gray-900 font-sans">
-  <!-- Hero Section -->
-  <section class="py-20 px-6 text-center bg-gradient-to-br from-purple-400 via-fuchsia-400 to-pink-300 relative">
-    <div class="max-w-6xl mx-auto relative">
-      <div class="relative mb-6">
-        <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight text-center drop-shadow-xl">
-          Jak łatwo wygrać z odchudzaniem.<br> Zmień życie dzięki hipnozie.
+<!-- Hero Section -->
+<section class="py-20 px-6 text-center bg-gradient-to-br from-purple-400 via-fuchsia-400 to-pink-300 relative">
+<div class="max-w-6xl mx-auto relative">
+<div class="relative mb-6">
+<h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight text-center drop-shadow-xl">
+          Jak łatwo wygrać z odchudzaniem.<br/> Zmień życie dzięki hipnozie.
         </h2>
-        <img src="beztla2.png" alt="Hypnobalance Logo" class="h-60 w-auto absolute right-[-200px] -mt-8 top-1/2 transform -translate-y-1/2 logo-desktop">
-        <img src="beztla2.png" alt="Hypnobalance Logo" class="logo-mobile">
-      </div>
-      <p class="text-xl text-white text-center mb-8 font-medium">
+<img alt="Hypnobalance Logo" class="h-60 w-auto absolute right-[-200px] -mt-8 top-1/2 transform -translate-y-1/2 logo-desktop" src="beztla2.png"/>
+<img alt="Hypnobalance Logo" class="logo-mobile" src="beztla2.png"/>
+</div>
+<p class="text-2xl text-white text-center mb-8 font-medium">
         Trzy nagrania hipnotyczne, które pomogą Ci przestać sabotować swoje wysiłki oraz pomogą zbudować zdrowe nawyki i pokochać aktywność fizyczną.
       </p>
-      <div class="text-center">
-        <a href="#purchase" class="inline-block bg-yellow-400 text-black font-bold px-10 py-5 rounded-full shadow-lg hover:bg-yellow-300 transition transform hover:scale-105">
+<div class="text-center">
+<a class="inline-block bg-yellow-400 text-black font-bold px-10 py-5 rounded-full shadow-lg hover:bg-yellow-300 transition transform hover:scale-105" href="#purchase">
           Kup teraz i zacznij transformację
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Benefits Section -->
-  <section class="bg-gradient-to-b from-fuchsia-100 via-violet-100 to-purple-100 py-16 px-6 text-gray-800">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-extrabold text-center text-purple-800 mb-12">
-        Co zyskasz dzięki tym nagraniom?
-      </h2>
-      <div class="grid md:grid-cols-2 benefits-grid gap-8">
-        <div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
-          <h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 1. Dotarcie do źródeł trudności w odchudzaniu</h3>
-          <p class="mt-2">Odkryjesz nieświadome mechanizmy, które sabotują Twoje działania.</p>
-          <p class="mt-1">Zyskasz nowe zrozumienie siebie – przestaniesz się obwiniać, a zaczniesz wspierać.</p>
-        </div>
-        <div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
-          <h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 2. Naturalna zmiana nawyków żywieniowych</h3>
-          <p class="mt-2">Zaczniesz podejmować zdrowsze wybory bez wysiłku i kontroli – Twoja podświadomość zrobi to za Ciebie.</p>
-          <p class="mt-1">Przestaniesz objadać się impulsywnie, odczujesz więcej sytości i lekkości po jedzeniu.</p>
-        </div>
-        <div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
-          <h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 3. Większa motywacja do ruchu i działania</h3>
-          <p class="mt-2">Zamiast zmuszać się do ćwiczeń, poczujesz autentyczną chęć ruchu – bo Twoje ciało zacznie samo się o to dopominać.</p>
-          <p class="mt-1">Aktywność fizyczna stanie się źródłem przyjemności, nie karą.</p>
-        </div>
-        <div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
-          <h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 4. Głębokie odprężenie i spokój</h3>
-          <p class="mt-2">Nagrania hipnotyczne działają jak terapeutyczny relaks dla ciała i umysłu – obniżają poziom stresu, napięcia i niepokoju.</p>
-          <p class="mt-1">Dzięki temu łatwiej będzie Ci podejmować zdrowe decyzje bez chaosu emocji.</p>
-        </div>
-        <div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
-          <h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 5. Większa wiara w siebie i wytrwałość</h3>
-          <p class="mt-2">Zaczniesz widzieć siebie jako osobę, która potrafi osiągnąć trwałą zmianę, nawet jeśli wcześniej się nie udawało.</p>
-          <p class="mt-1">Rozwiniesz w sobie nową tożsamość – osoby, która dba o siebie z lekkością i troską.</p>
-        </div>
-        <div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
-          <h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 6. Zmiana relacji z własnym ciałem</h3>
-          <p class="mt-2">Zamiast patrzeć na siebie z krytyką i niechęcią, zaczniesz budować relację opartą na akceptacji, szacunku i wdzięczności.</p>
-          <p class="mt-1">To właśnie taka relacja z ciałem pozwala podejmować lepsze decyzje, bez presji i wstydu.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- What You Get Section -->
-  <section class="bg-white py-20 px-6 text-gray-800">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-extrabold text-center text-purple-800 mb-6">Co otrzymujesz w kursie?</h2>
-      <p class="text-xl text-center text-gray-700 mb-12 italic">
-        3 transformujące nagrania hipnotyczne – bez diet, bez przymusu, z szacunkiem do siebie
-      </p>
-      <div class="bg-purple-100 rounded-xl p-8 mb-12">
-        <p class="text-lg leading-relaxed text-gray-800">
-          Ten kurs to gotowy zestaw 3 profesjonalnych nagrań hipnotycznych, które możesz słuchać we własnym tempie, gdziekolwiek jesteś.
-          Nagrania prowadzone są łagodnym głosem, wprowadzają w stan głębokiego relaksu i uruchamiają procesy zmiany na poziomie podświadomym.
-          <strong>Wystarczy tylko założyć słuchawki i pozwolić sobie na 15–25 minut dziennie.</strong>
-        </p>
-      </div>
-      <div class="grid grid-cols-1 course-grid md:grid-cols-3 gap-8">
-        <div class="bg-white shadow-md rounded-xl p-6">
-          <div class="text-2xl mb-3">🎧 Nagranie 1</div>
-          <h3 class="text-xl font-semibold text-purple-700 mb-2">Odkryj przyczyny, które zatrzymują Twoje odchudzanie</h3>
-          <ul class="list-disc list-inside text-gray-700">
-            <li>Pomaga zidentyfikować ukryte blokady, lęki i przekonania</li>
-            <li>Zmieniasz relację z jedzeniem z wroga na przyjaciela</li>
-            <li>Czujesz, jak napięcie odpuszcza, a Ty zaczynasz ufać sobie na nowo</li>
-          </ul>
-          <p class="mt-3 text-sm text-gray-500">⏱ Czas trwania: ok. 20 minut</p>
-        </div>
-        <div class="bg-white shadow-md rounded-xl p-6">
-          <div class="text-2xl mb-3">🎧 Nagranie 2</div>
-          <h3 class="text-xl font-semibold text-purple-700 mb-2">Zmień nawyki żywieniowe bez walki</h3>
-          <ul class="list-disc list-inside text-gray-700">
-            <li>Tworzysz nowe ścieżki nawyków, które służą Twojemu ciału</li>
-            <li>Jedzenie przestaje być formą pocieszenia</li>
-            <li>Twoje decyzje stają się łatwe, intuicyjne, naturalne</li>
-          </ul>
-          <p class="mt-3 text-sm text-gray-500">⏱ Czas trwania: ok. 22 minuty</p>
-        </div>
-        <div class="bg-white shadow-md rounded-xl p-6">
-          <div class="text-2xl mb-3">🎧 Nagranie 3</div>
-          <h3 class="text-xl font-semibold text-purple-700 mb-2">Obudź motywację do ruchu i działania</h3>
-          <ul class="list-disc list-inside text-gray-700">
-            <li>Wzmacniasz naturalną potrzebę ruchu bez przymusu</li>
-            <li>Odnajdujesz radość w aktywności fizycznej</li>
-            <li>Każdy krok przybliża Cię do lżejszej wersji siebie</li>
-          </ul>
-          <p class="mt-3 text-sm text-gray-500">⏱ Czas trwania: ok. 18 minut</p>
-        </div>
-      </div>
-      <div class="bg-purple-200 rounded-xl shadow-md p-8 mt-16 text-center">
-        <h3 class="text-xl font-bold text-purple-800 mb-4">💾 Otrzymujesz wszystko od razu po zakupie</h3>
-        <p class="text-lg text-gray-800 mb-6 max-w-3xl mx-auto">
-          Zaraz po dokonaniu płatności otrzymasz natychmiastowy dostęp do wszystkich nagrań hipnotycznych oraz bonusowych materiałów.<br><br>
-          Pliki możesz zapisać na swoim telefonie, komputerze lub tablecie i słuchać ich wtedy, gdy będzie Ci najwygodniej – w ciszy, spokoju, bez pośpiechu.<br><br>
-          Nie musisz nic instalować, zakładać kont ani czekać na dostęp.<br>
-          <strong>Cały kurs masz od razu u siebie – na zawsze.</strong>
-        </p>
-        <a href="#purchase" class="inline-block bg-yellow-400 text-black font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-yellow-300 transition">
-          Kup teraz i zacznij transformację
-        </a>
-      </div>
-    </div>
-  </section>
-
-<!-- Sekcja BONUSY: jedna kolumna, mocny WOW, dłuższe opisy -->
-  <section class="relative py-20 px-6 overflow-hidden">
-    <!-- tło z gradientem i delikatnymi plamami -->
-    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-purple-800 via-fuchsia-700 to-pink-600"></div>
-    <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-pink-400/30 blur-3xl"></div>
-    <div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-purple-400/30 blur-3xl"></div>
-
-    <div class="max-w-3xl mx-auto text-center text-white">
-      <h2 class="text-4xl font-extrabold drop-shadow mb-4">Bonusy, które dostajesz GRATIS</h2>
-      <p class="text-xl/relaxed opacity-95 mb-10">Idealne uzupełnienie kursu — razem z nagraniami hipnotycznymi tworzą spójny system: diagnoza ➜ praca z podświadomością ➜ codzienna praktyka ➜ poranna energia.</p>
-    </div>
-
-    <div class="max-w-6xl mx-auto space-y-6">
-      <!-- Bonus 1 -->
-      <article class="relative bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-gray-900">
-        <div class="flex items-start gap-4">
-          <div class="text-4xl md:text-5xl">📘</div>
-          <div class="flex-1">
-            <header class="flex flex-wrap items-center gap-3 mb-3">
-              <h3 class="text-2xl font-extrabold">Ebook „Psychologia skutecznego odchudzania”</h3>
-              <span class="inline-block rounded-full bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1">Wartość: 87 zł</span>
-            </header>
-            <p class="text-[15px] leading-relaxed mb-3">Dowiesz się, dlaczego do tej pory odchudzanie kończyło się porażką i jakie mechanizmy psychiczne sabotują Twoje działania. Ten ebook to mapa, która pokazuje jak działa Twoja głowa i co trzeba zmienić, aby wreszcie osiągnąć trwały efekt.</p>
-            <ul class="list-disc list-inside text-[15px] leading-relaxed text-gray-700">
-    
-            </ul>
-          </div>
-        </div>
-      </article>
-
-      <!-- Bonus 2 -->
-      <article class="relative bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-gray-900">
-        <div class="flex items-start gap-4">
-          <div class="text-4xl md:text-5xl">📝</div>
-          <div class="flex-1">
-            <header class="flex flex-wrap items-center gap-3 mb-3">
-              <h3 class="text-2xl font-extrabold">Karta zmiany nawyków + tracker na 30 dni</h3>
-              <span class="inline-block rounded-full bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1">Wartość: 47 zł</span>
-            </header>
-            <p class="text-[15px] leading-relaxed mb-3">Nie ma zmiany bez konsekwencji w codzienności. Dzięki karcie zmiany nawyków i trackerowi w prosty sposób zaplanujesz swoje małe kroki i będziesz widzieć realny postęp dzień po dniu. Nawet jeśli pojawią się potknięcia, nie zaczynasz wszystkiego od nowa – tylko wracasz na swoją ścieżkę i idziesz dalej.</p>
-            <ul class="list-disc list-inside text-[15px] leading-relaxed text-gray-700">
-        
-            </ul>
-          </div>
-        </div>
-      </article>
-
-      <!-- Bonus 3 -->
-      <article class="relative bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-gray-900">
-        <div class="flex items-start gap-4">
-          <div class="text-4xl md:text-5xl">❓</div>
-          <div class="flex-1">
-            <header class="flex flex-wrap items-center gap-3 mb-3">
-              <h3 class="text-2xl font-extrabold">Quiz „Co blokuje Twoje odchudzanie?”</h3>
-              <span class="inline-block rounded-full bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1">Wartość: 67 zł</span>
-            </header>
-            <p class="text-[15px] leading-relaxed mb-3">Szybka diagnoza Twoich głównych blokad - interaktywne narzędzie, które w kilka minut pokaże Ci, co tak naprawdę stoi na przeszkodzie: emocje, złe nawyki, brak ruchu czy niska motywacja. Dzięki temu od razu wiesz, nad czym pracować w pierwszej kolejności.</p>
-            <ul class="list-disc list-inside text-[15px] leading-relaxed text-gray-700">
-              
-            </ul>
-          </div>
-        </div>
-      </article>
-
-      <!-- Bonus 4 -->
-      <article class="relative bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-gray-900">
-        <div class="flex items-start gap-4">
-          <div class="text-4xl md:text-5xl">🎧</div>
-          <div class="flex-1">
-            <header class="flex flex-wrap items-center gap-3 mb-3">
-              <h3 class="text-2xl font-extrabold">Afirmacje wspierające zmianę</h3>
-              <span class="inline-block rounded-full bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1">Wartość: 47 zł</span>
-            </header>
-            <p class="text-[15px] leading-relaxed mb-3">Gotowe zestawy afirmacji, Twoje codzienne wsparcie w kieszeni. Pomagają Ci zmienić self-talk – czyli sposób, w jaki mówisz sam do siebie. Zamiast podcinać sobie skrzydła, zaczynasz budować nastawienie, które wspiera każdy krok w stronę zmiany.</p>
-            <ul class="list-disc list-inside text-[15px] leading-relaxed text-gray-700">
-            
-            </ul>
-          </div>
-        </div>
-      </article>
-
-      <!-- Bonus 5 -->
-      <article class="relative bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-gray-900">
-        <div class="flex items-start gap-4">
-          <div class="text-4xl md:text-5xl">⚡</div>
-          <div class="flex-1">
-            <header class="flex flex-wrap items-center gap-3 mb-3">
-              <h3 class="text-2xl font-extrabold">Dodatkowe nagranie audio „Poranna aktywacja energii”</h3>
-              <span class="inline-block rounded-full bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1">Wartość: 77 zł</span>
-            </header>
-            <p class="text-[15px] leading-relaxed mb-3">Krótkie, energetyczne nagranie, które od rana odpala w Tobie motywację i energię do działania. Zajmuje jedynie 6 minut, a dzięki niemu wstajesz pełen mocy i od razu wchodzisz w dzień z nastawieniem zwycięzcy.</p>
-            <ul class="list-disc list-inside text-[15px] leading-relaxed text-gray-700">
-             
-          </div>
-        </div>
-      </article>
-    </div>
-
-<section class="py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-2 gap-8 items-start">
-
-      <!-- PRAWA grafika - NA MOBILE ma być pierwsza -->
-      <figure class="rounded-2xl overflow-hidden shadow-2xl order-1 md:order-2">
-        <img id="summaryImage" src="okladka1.png" alt="Okładka / grafika kursu"
-             class="w-full object-contain block" />
-      </figure>
-
-      <!-- LEWA sekcja - NA MOBILE ma być druga -->
-      <div id="summaryCard"
-           class="rounded-2xl p-6 md:p-8 text-gray-900 bg-gradient-to-r from-yellow-300 to-amber-400 shadow-2xl order-2 md:order-1">
-        <h3 class="text-2xl font-extrabold text-purple-900 mb-3 text-center">
-          Łączna wartość bonusów: 325 zł
-        </h3>
-
-        <ul class="text-left list-disc list-inside text-lg leading-relaxed mb-4">
-          <li>Nagrania zmieniają Twoje nastawienie podświadome.</li>
-          <li>Ebook i quiz dają Ci świadomość i kierunek.</li>
-          <li>Trackery dbają o konsekwencję.</li>
-          <li>Afirmacje i poranna aktywacja podtrzymują Twoją energię każdego dnia.</li>
-        </ul>
-
-        <p class="text-lg mb-4 text-center">
-          Dzięki temu nie tylko zaczynasz… ale wreszcie idziesz do końca.
-        </p>
-
-        <p class="text-xl font-extrabold text-green-700 text-center mb-4">
-          A teraz dostajesz je wszystkie ZA DARMO przy zakupie kursu!
-        </p>
-
-        <div class="text-center">
-          <a href="#purchase"
-             class="inline-block bg-purple-800 text-white font-bold px-12 py-6 text-lg rounded-full shadow-xl hover:bg-purple-900 transition transform hover:scale-105">
-            Kup teraz z bonusami – tylko 97 zł
-          </a>
-        </div>
-      </div>
-
-    </div>
+</div>
+</div>
   </div>
 </section>
+<!-- Benefits Section -->
+<section class="bg-gradient-to-b from-fuchsia-100 via-violet-100 to-purple-100 py-16 px-6 text-gray-800">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-5xl font-extrabold text-center text-purple-800 mb-12">
+        Co zyskasz dzięki tym nagraniom?
+      </h2>
+<div class="grid md:grid-cols-2 benefits-grid gap-8">
+<div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
+<h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 1. Dotarcie do źródeł trudności w odchudzaniu</h3>
+<p class="mt-2">Odkryjesz nieświadome mechanizmy, które sabotują Twoje działania.</p>
+<p class="mt-1">Zyskasz nowe zrozumienie siebie – przestaniesz się obwiniać, a zaczniesz wspierać.</p>
+</div>
+<div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
+<h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 2. Naturalna zmiana nawyków żywieniowych</h3>
+<p class="mt-2">Zaczniesz podejmować zdrowsze wybory bez wysiłku i kontroli – Twoja podświadomość zrobi to za Ciebie.</p>
+<p class="mt-1">Przestaniesz objadać się impulsywnie, odczujesz więcej sytości i lekkości po jedzeniu.</p>
+</div>
+<div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
+<h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 3. Większa motywacja do ruchu i działania</h3>
+<p class="mt-2">Zamiast zmuszać się do ćwiczeń, poczujesz autentyczną chęć ruchu – bo Twoje ciało zacznie samo się o to dopominać.</p>
+<p class="mt-1">Aktywność fizyczna stanie się źródłem przyjemności, nie karą.</p>
+</div>
+<div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
+<h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 4. Głębokie odprężenie i spokój</h3>
+<p class="mt-2">Nagrania hipnotyczne działają jak terapeutyczny relaks dla ciała i umysłu – obniżają poziom stresu, napięcia i niepokoju.</p>
+<p class="mt-1">Dzięki temu łatwiej będzie Ci podejmować zdrowe decyzje bez chaosu emocji.</p>
+</div>
+<div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
+<h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 5. Większa wiara w siebie i wytrwałość</h3>
+<p class="mt-2">Zaczniesz widzieć siebie jako osobę, która potrafi osiągnąć trwałą zmianę, nawet jeśli wcześniej się nie udawało.</p>
+<p class="mt-1">Rozwiniesz w sobie nową tożsamość – osoby, która dba o siebie z lekkością i troską.</p>
+</div>
+<div class="bg-white rounded-xl shadow-md p-6 benefit-box benefit-small-mobile">
+<h3 class="text-xl font-bold text-purple-700 benefit-title-mobile">✅ 6. Zmiana relacji z własnym ciałem</h3>
+<p class="mt-2">Zamiast patrzeć na siebie z krytyką i niechęcią, zaczniesz budować relację opartą na akceptacji, szacunku i wdzięczności.</p>
+<p class="mt-1">To właśnie taka relacja z ciałem pozwala podejmować lepsze decyzje, bez presji i wstydu.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- What You Get Section -->
+<section class="bg-white py-20 px-6 text-gray-800">
+<div class="max-w-6xl mx-auto">
+<h2 class="text-5xl font-extrabold text-center text-purple-800 mb-6" style="font-size: 2rem; text-align: center; color: #4B0082;">Co otrzymujesz w kursie?</h2><br/>
+<h3 class="text-3xl text-center text-purple-800 font-extrabold mb-8" style="font-size: 2rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px; color: #4B0082;">3 NAGRANIA HIPNOTYCZNE – TWÓJ PRZEŁOM W ODCHUDZANIU</h3>
+<div class="bg-purple-100 rounded-xl p-8 mb-12" style="font-size: 1.1rem; line-height: 1.6; color: #333; margin-top: 15px;">
 
+
+
+<!-- Blok z pełną szerokością na mobile -->
+<div class="w-full mx-0 px-4 py-6 bg-purple-100 
+            md:mx-auto md:max-w-5xl md:rounded-xl md:px-12">
+
+  <p class="w-full ml-0 text-left md:ml-20 md:max-w-3xl">
+    👉 Próbowałeś już diet, planów treningowych i różnych metod, ale ciągle wracasz do starych nawyków?<br/>
+    👉 Świadomie chcesz zmiany, ale podświadomie coś Cię sabotuje?
+  </p>
+
+  <p class="text-center mt-4 md:ml-20 md:max-w-3xl">
+    To nie Twoja wina.<br/>
+    Twoja podświadomość po prostu gra w inną grę niż Ty.<br/>
+    I właśnie tutaj zaczyna się prawdziwy przełom.<br/>
+<br/>
+🎧 Wystarczy, że założysz słuchawki i posłuchasz jednego z trzech nagrań,a Twoja podświadomość<br/>
+ zacznie wspierać Cię w zmianie zamiast przeszkadzać.
+  </p>
+
+  <p class="w-full ml-0 text-left mt-4 md:ml-20 md:max-w-3xl">
+    ✔️ Nie musisz już walczyć ze sobą, żeby trzymać się diety – Twoje wybory żywieniowe staną się naturalne.<br/>
+    ✔️ Nie musisz się zmuszać do ćwiczeń – pojawi się wewnętrzna motywacja i lekkość działania.<br/>
+    ✔️ Zamiast ciągłej frustracji i wyrzutów sumienia, poczujesz spokój i pewność, że tym razem naprawdę Ci się uda.
+  </p>
+
+  <ul class="list-disc list-outside pl-4 ml-0 w-full text-left mt-4 md:ml-20 md:max-w-3xl">
+    <li>uruchomisz głębokie procesy przemiany,</li>
+    <li>Twoja podświadomość stanie się Twoim największym sprzymierzeńcem.</li>
+  </ul>
+
+  <p class="text-center mt-6 md:ml-20 md:max-w-3xl">
+    🔥 To nie jest kolejna dieta ani plan treningowy.<br/>
+    To fundament, który sprawi, że każda metoda wreszcie zadziała – bo przestaniesz walczyć sam ze sobą. 🔥
+  </p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="grid grid-cols-1 course-grid md:grid-cols-3 gap-8">
+<div class="bg-white shadow-md rounded-xl p-6">
+<div class="text-2xl mb-3">🎧 Nagranie 1</div>
+<h3 class="text-xl font-semibold text-purple-700 mb-2">Odkryj przyczyny, które zatrzymują Twoje odchudzanie</h3>
+<ul class="list-disc list-inside text-gray-700">
+<li>Pomaga zidentyfikować ukryte blokady, lęki i przekonania</li>
+<li>Zmieniasz relację z jedzeniem z wroga na przyjaciela</li>
+<li>Czujesz, jak napięcie odpuszcza, a Ty zaczynasz ufać sobie na nowo</li>
+</ul>
+<p class="mt-3 text-sm text-gray-500">⏱ Czas trwania: ok. 20 minut</p>
+</div>
+<div class="bg-white shadow-md rounded-xl p-6">
+<div class="text-2xl mb-3">🎧 Nagranie 2</div>
+<h3 class="text-xl font-semibold text-purple-700 mb-2">Zmień nawyki żywieniowe bez walki</h3>
+<ul class="list-disc list-inside text-gray-700">
+<li>Tworzysz nowe ścieżki nawyków, które służą Twojemu ciału</li>
+<li>Jedzenie przestaje być formą pocieszenia</li>
+<li>Twoje decyzje stają się łatwe, intuicyjne, naturalne</li>
+</ul>
+<p class="mt-3 text-sm text-gray-500">⏱ Czas trwania: ok. 22 minuty</p>
+</div>
+<div class="bg-white shadow-md rounded-xl p-6">
+<div class="text-2xl mb-3">🎧 Nagranie 3</div>
+<h3 class="text-xl font-semibold text-purple-700 mb-2">Obudź motywację do ruchu i działania</h3>
+<ul class="list-disc list-inside text-gray-700">
+<li>Wzmacniasz naturalną potrzebę ruchu bez przymusu</li>
+<li>Odnajdujesz radość w aktywności fizycznej</li>
+<li>Każdy krok przybliża Cię do lżejszej wersji siebie</li>
+</ul>
+<p class="mt-3 text-sm text-gray-500">⏱ Czas trwania: ok. 18 minut</p>
+</div>
+</div>
+<div class="bg-purple-200 rounded-xl shadow-md p-8 mt-16 text-center">
+<h3 class="text-3xl font-bold text-purple-800 mb-4">💾 Otrzymujesz wszystko od razu po zakupie</h3>
+<p class="text-lg text-gray-800 mb-6 max-w-3xl mx-auto">
+          Zaraz po dokonaniu płatności otrzymasz natychmiastowy dostęp do wszystkich nagrań hipnotycznych oraz bonusowych materiałów.<br/><br/>
+          Pliki możesz zapisać na swoim telefonie, komputerze lub tablecie i słuchać ich wtedy, gdy będzie Ci najwygodniej – w ciszy, spokoju, bez pośpiechu.<br/><br/>
+          Nie musisz nic instalować, zakładać kont ani czekać na dostęp.<br/>
+<strong>Cały kurs masz od razu u siebie – na zawsze.</strong>
+</p>
+<a class="inline-block bg-yellow-400 text-black font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-yellow-300 transition" href="#purchase">
+          Kup teraz i zacznij transformację
+        </a>
+</div>
+</div>
+</section>
+<!-- Sekcja BONUSY: jedna kolumna, mocny WOW, dłuższe opisy -->
+<section class="relative py-20 px-6 overflow-hidden">
+<!-- tło z gradientem i delikatnymi plamami -->
+<div class="absolute inset-0 -z-10 bg-gradient-to-br from-purple-800 via-fuchsia-700 to-pink-600"></div>
+<div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-pink-400/30 blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-purple-400/30 blur-3xl"></div>
+<div class="max-w-3xl mx-auto text-center text-white">
+<h2 class="text-5xl font-extrabold drop-shadow mb-4">Bonusy, które dostajesz GRATIS</h2>
+<p class="text-xl/relaxed opacity-95 mb-10">Idealne uzupełnienie kursu — razem z nagraniami hipnotycznymi tworzą spójny system: diagnoza ➜ praca z podświadomością ➜ codzienna praktyka ➜ poranna energia.</p>
+</div>
+<div class="max-w-6xl mx-auto space-y-6">
+<!-- Bonus 1 -->
+<article class="relative bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-gray-900">
+<div class="flex items-start gap-4">
+<div class="text-4xl md:text-5xl">📘</div>
+<div class="flex-1">
+<header class="flex flex-wrap items-center gap-3 mb-3">
+<h3 class="text-2xl font-extrabold">Ebook „Psychologia skutecznego odchudzania”</h3>
+<span class="inline-block rounded-full bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1">Wartość: 87 zł</span>
+</header>
+<p class="text-[15px] leading-relaxed mb-3">Dowiesz się, dlaczego do tej pory odchudzanie kończyło się porażką i jakie mechanizmy psychiczne sabotują Twoje działania. Ten ebook to mapa, która pokazuje jak działa Twoja głowa i co trzeba zmienić, aby wreszcie osiągnąć trwały efekt.</p>
+<ul class="list-disc list-inside text-[15px] leading-relaxed text-gray-700">
+</ul>
+</div>
+</div>
+</article>
+<!-- Bonus 2 -->
+<article class="relative bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-gray-900">
+<div class="flex items-start gap-4">
+<div class="text-4xl md:text-5xl">📝</div>
+<div class="flex-1">
+<header class="flex flex-wrap items-center gap-3 mb-3">
+<h3 class="text-2xl font-extrabold">Karta zmiany nawyków + tracker na 30 dni</h3>
+<span class="inline-block rounded-full bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1">Wartość: 47 zł</span>
+</header>
+<p class="text-[15px] leading-relaxed mb-3">Nie ma zmiany bez konsekwencji w codzienności. Dzięki karcie zmiany nawyków i trackerowi w prosty sposób zaplanujesz swoje małe kroki i będziesz widzieć realny postęp dzień po dniu. Nawet jeśli pojawią się potknięcia, nie zaczynasz wszystkiego od nowa – tylko wracasz na swoją ścieżkę i idziesz dalej.</p>
+<ul class="list-disc list-inside text-[15px] leading-relaxed text-gray-700">
+</ul>
+</div>
+</div>
+</article>
+<!-- Bonus 3 -->
+<article class="relative bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-gray-900">
+<div class="flex items-start gap-4">
+<div class="text-4xl md:text-5xl">❓</div>
+<div class="flex-1">
+<header class="flex flex-wrap items-center gap-3 mb-3">
+<h3 class="text-2xl font-extrabold">Quiz „Co blokuje Twoje odchudzanie?”</h3>
+<span class="inline-block rounded-full bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1">Wartość: 67 zł</span>
+</header>
+<p class="text-[15px] leading-relaxed mb-3">Szybka diagnoza Twoich głównych blokad - interaktywne narzędzie, które w kilka minut pokaże Ci, co tak naprawdę stoi na przeszkodzie: emocje, złe nawyki, brak ruchu czy niska motywacja. Dzięki temu od razu wiesz, nad czym pracować w pierwszej kolejności.</p>
+<ul class="list-disc list-inside text-[15px] leading-relaxed text-gray-700">
+</ul>
+</div>
+</div>
+</article>
+<!-- Bonus 4 -->
+<article class="relative bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-gray-900">
+<div class="flex items-start gap-4">
+<div class="text-4xl md:text-5xl">🎧</div>
+<div class="flex-1">
+<header class="flex flex-wrap items-center gap-3 mb-3">
+<h3 class="text-2xl font-extrabold">Afirmacje wspierające zmianę</h3>
+<span class="inline-block rounded-full bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1">Wartość: 47 zł</span>
+</header>
+<p class="text-[15px] leading-relaxed mb-3">Gotowe zestawy afirmacji, Twoje codzienne wsparcie w kieszeni. Pomagają Ci zmienić self-talk – czyli sposób, w jaki mówisz sam do siebie. Zamiast podcinać sobie skrzydła, zaczynasz budować nastawienie, które wspiera każdy krok w stronę zmiany.</p>
+<ul class="list-disc list-inside text-[15px] leading-relaxed text-gray-700">
+</ul>
+</div>
+</div>
+</article>
+<!-- Bonus 5 -->
+<article class="relative bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-gray-900">
+<div class="flex items-start gap-4">
+<div class="text-4xl md:text-5xl">⚡</div>
+<div class="flex-1">
+<header class="flex flex-wrap items-center gap-3 mb-3">
+<h3 class="text-2xl font-extrabold">Dodatkowe nagranie audio „Poranna aktywacja energii”</h3>
+<span class="inline-block rounded-full bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1">Wartość: 77 zł</span>
+</header>
+<p class="text-[15px] leading-relaxed mb-3">Krótkie, energetyczne nagranie, które od rana odpala w Tobie motywację i energię do działania. Zajmuje jedynie 6 minut, a dzięki niemu wstajesz pełen mocy i od razu wchodzisz w dzień z nastawieniem zwycięzcy.</p>
+<ul class="list-disc list-inside text-[15px] leading-relaxed text-gray-700">
+</ul></div>
+</div>
+</article>
+</div>
+<section class="py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-2 gap-8 items-start">
+<!-- PRAWA grafika - NA MOBILE ma być pierwsza -->
+<figure class="rounded-2xl overflow-hidden shadow-2xl order-1 md:order-2">
+<img alt="Okładka / grafika kursu" class="w-full object-contain block" id="summaryImage" src="okladka1.png"/>
+</figure>
+<!-- LEWA sekcja - NA MOBILE ma być druga -->
+<div class="rounded-2xl p-6 md:p-8 text-gray-900 bg-gradient-to-r from-yellow-300 to-amber-400 shadow-2xl order-2 md:order-1" id="summaryCard">
+<h3 class="text-2xl font-extrabold text-purple-900 mb-3 text-center">
+          Łączna wartość bonusów: 325 zł
+        </h3>
+<ul class="text-left list-disc list-inside text-lg leading-relaxed mb-4">
+<li>Nagrania zmieniają Twoje nastawienie podświadome.</li>
+<li>Ebook i quiz dają Ci świadomość i kierunek.</li>
+<li>Trackery dbają o konsekwencję.</li>
+<li>Afirmacje i poranna aktywacja podtrzymują Twoją energię każdego dnia.</li>
+</ul>
+<p class="text-lg mb-4 text-center">
+          Dzięki temu nie tylko zaczynasz… ale wreszcie idziesz do końca.
+        </p>
+<p class="text-xl font-extrabold text-green-700 text-center mb-4">
+          A teraz dostajesz je wszystkie ZA DARMO przy zakupie kursu!
+        </p>
+<div class="text-center">
+<a class="inline-block bg-purple-800 text-white font-bold px-12 py-6 text-lg rounded-full shadow-xl hover:bg-purple-900 transition transform hover:scale-105" href="#purchase">
+            Kup teraz z bonusami – tylko 97 zł
+          </a>
+</div>
+</div>
+</div>
+</div>
+</section>
 <script>
   // Dopasuj wysokość grafiki do wysokości lewej karty (tylko zmniejszanie)
   (function () {
@@ -381,46 +397,36 @@ section.bg-gradient-to-r.from-purple-700.to-pink-600 a[href="#purchase"] {
   })();
 </script>
 
+
+
 <!-- Opinie -->
 <section class="py-16 bg-purple-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-4xl font-extrabold text-center text-purple-900 mb-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-4xl font-extrabold text-center text-purple-900 mb-10">
       Opinie naszych klientów
     </h2>
-
-    <!-- wrapper z zaokrągleniem i overflow, żeby całość wyglądała jak jeden element -->
-    <div class="rounded-2xl overflow-hidden shadow-2xl">
-      <div class="grid grid-cols-1 md:grid-cols-2 md:gap-0 gap-4">
-        <img
-          src="opinia1.png"
-          alt="Opinia klienta 1"
-          class="block w-full h-auto"
-        />
-        <img
-          src="opinia2.png"
-          alt="Opinia klienta 2"
-          class="block w-full h-auto"
-        />
-      </div>
-    </div>
-  </div>
+<!-- wrapper z zaokrągleniem i overflow, żeby całość wyglądała jak jeden element -->
+<div class="rounded-2xl overflow-hidden shadow-2xl">
+<div class="grid grid-cols-1 md:grid-cols-2 md:gap-0 gap-4">
+<img alt="Opinia klienta 1" class="block w-full h-auto" src="opinia1.png"/>
+<img alt="Opinia klienta 2" class="block w-full h-auto" src="opinia2.png">
+</img></div>
+</div>
+</div>
 </section>
 <section class="py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-<section class="bg-gradient-to-r from-purple-700 to-pink-600 py-20 px-6 text-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gradient-to-r from-purple-700 to-pink-600 py-20 px-6 text-white">
 <div class="max-w-5xl mx-auto text-center">
-<h2 class="text-4xl md:text-5xl font-extrabold mb-6">🔥 Twoja wyjątkowa oferta 🔥</h2>
-<p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
+<h2 class="text-5xl md:text-5xl font-extrabold mb-6">🔥 Twoja wyjątkowa oferta 🔥</h2>
+<p class="text-2xl md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
 Za pełny program 3 nagrań hipnotycznych, które pomogą Ci:
-<br>✔ odkryć i przełamać ukryte blokady w odchudzaniu,
-<br>✔ zmienić nawyki żywieniowe i odzyskać kontrolę nad jedzeniem,
-<br>✔ zbudować motywację do ruchu i aktywności fizycznej –
-<br><br>
+<br/>✔ odkryć i przełamać ukryte blokady w odchudzaniu,
+<br/>✔ zmienić nawyki żywieniowe i odzyskać kontrolę nad jedzeniem,
+<br/>✔ zbudować motywację do ruchu i aktywności fizycznej –
+<br/><br/>
 nie zapłacisz <span class="line-through">197 zł</span>, tylko <span class="font-extrabold text-yellow-300 text-2xl">97 zł!</span>
 </p>
-
-
 <div class="bg-white text-gray-900 rounded-2xl shadow-2xl p-8 md:p-10 mb-12">
 <h3 class="text-2xl md:text-3xl font-bold text-purple-800 mb-6">🎁 Bonusy w prezencie (o wartości 325 zł)</h3>
 <ol class="space-y-4 text-left max-w-2xl mx-auto text-lg">
@@ -430,27 +436,19 @@ nie zapłacisz <span class="line-through">197 zł</span>, tylko <span class="fon
 <li><span class="font-bold">4.</span> Tracker i karta zmiany nawyków na 30 dni – do codziennego śledzenia postępów, emocji i nowych nawyków.</li>
 <li><span class="font-bold">5.</span> Quiz HypnoSlim – szybki test, dzięki któremu odkryjesz swoje nawyki i dowiesz się, od czego najlepiej zacząć zmianę.</li>
 </ol>
-
-
 <p class="text-xl font-bold text-purple-900 mt-10">👉 Kurs + bonusy o wartości 522 zł – dziś za jedyne <span class="text-3xl text-pink-600 font-extrabold">97 zł</span></p>
 </div>
-
-
 <!-- Licznik -->
 <div class="bg-black bg-opacity-30 rounded-xl inline-block px-6 py-4 mb-10">
 <p class="text-yellow-300 font-mono text-lg">Oferta ważna jeszcze przez:</p>
-<div id="countdown2" class="text-3xl font-extrabold text-yellow-300"></div>
+<div class="text-3xl font-extrabold text-yellow-300" id="countdown2"></div>
 </div>
-
-
 <!-- CTA -->
-<a href="#purchase" class="inline-block bg-yellow-400 text-black font-bold px-12 py-5 rounded-full shadow-xl hover:bg-yellow-300 transition transform hover:scale-105 text-xl">
+<a class="inline-block bg-yellow-400 text-black font-bold px-12 py-5 rounded-full shadow-xl hover:bg-yellow-300 transition transform hover:scale-105 text-xl" href="#purchase">
 Kup teraz – tylko 97 zł
 </a>
 </div>
 </section>
-
-
 <script>
 // Licznik 3h
 function startCountdown2(duration, display) {
@@ -481,33 +479,187 @@ const threeHours = 60 * 60 * 3;
 const display = document.querySelector('#countdown2');
 startCountdown2(threeHours, display);
 };
+
+
+
+
 </script>
 
 
-  
-  <footer class="bg-purple-900 text-white text-center py-6 border-t mt-12">
-    <p>&copy; 2025 Hypnobalance&.</p>
-  </footer>
-</body>
+<!-- Sekcja: 30-dniowa Gwarancja Satysfakcji -->
+<section id="guarantee" class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-20 px-6 bg-white">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-purple-900 mb-6">
+      ✅ 100% Gwarancja satysfakcji – 30 dni
+    </h2>
+
+    <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+      Chcemy, żebyś czuł się w pełni bezpiecznie podejmując decyzję. Dlatego dajemy Ci 30 dni gwarancji zwrotu pieniędzy.
+      Jeśli w ciągu miesiąca uznasz, że kurs nie spełnia Twoich oczekiwań – po prostu napisz do nas maila.
+      Bez żadnych pytań, bez wypełniania formularzy i bez ukrytych haczyków – oddajemy Ci pełną kwotę zakupu.
+    </p>
+
+    <p class="text-lg md:text-xl text-gray-900 font-semibold mb-8">
+      👉 Niczym nie ryzykujesz: albo osiągniesz satysfakcjonujące efekty, albo odzyskasz swoje pieniądze.
+    </p>
+
+    <div class="flex justify-center">
+      <img
+        src="gwaracnja.png"
+        onerror="this.onerror=null;this.src='gwarancja.png';"
+        alt="Gwarancja satysfakcji 30 dni"
+        class="w-72 md:w-96"
+      />
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Sekcja: Powielenie Oferty -->
+<section id="duplicate-offer" class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gradient-to-b from-purple-100 via-pink-100 py-20 px-6 text-black" style="background-color:#ffffff; background-size:contain;background-position:center;background-repeat:no-repeat;">
+  <div class="absolute inset-0 bg-black/0"></div>
+  <div class="relative">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-purple-900 mb-8">
+      ✨ Wszystko, czego potrzebujesz, aby schudnąć z lekkością
+    </h2>
+    <p class="text-lg md:text-xl leading-relaxed mb-6">
+      Kupując kurs HypnoSlim, otrzymujesz kompletny zestaw wsparcia, który:
+    </p>
+    <ul class="text-left max-w-3xl mx-auto text-lg space-y-2 mb-6">
+      <li>✔ pomaga wyłączyć autopilota, który nie pozwalał Ci schudnąć i przełamać wszystkie mechanizmy sabotujące Twoje odchudzanie,</li>
+      <li>✔ prowadzi Cię do zdrowych nawyków żywieniowych bez wyrzeczeń i ciągłej walki,</li>
+      <li>✔ buduje wewnętrzną motywację do ruchu i dbania o swoje ciało,</li>
+      <li>✔ przywraca spokój w głowie i lekkość w ciele.</li>
+    </ul>
+    <p class="text-lg md:text-xl mb-6">👉 W ramach pakietu dostajesz:</p>
+    <ul class="text-left max-w-3xl mx-auto text-lg space-y-2 mb-6">
+      <li><strong>3 hipnotyczne sesje audio</strong> – fundament Twojej przemiany,</li>
+      <li><strong>6 bonusów o wartości 325 zł</strong>: nagranie porannej aktywacji, zestaw afirmacji, quiz, tracker 30 dni, kartę zmiany nawyków i e-book „Psychologia skutecznego odchudzania”,</li>
+      <li><strong>30-dniową gwarancję satysfakcji</strong> – zero ryzyka, pełne bezpieczeństwo.</li>
+    </ul>
+    <p class="text-lg md:text-xl mb-6">
+      Łączna wartość tego zestawu to <span class="font-bold">522 zł</span>, a Ty możesz rozpocząć swoją podróż już dziś za jedyne <span class="font-extrabold text-pink-600">97 zł</span>.
+    </p>
+    <p class="text-lg md:text-xl font-semibold mb-10">
+      To nie kolejna dieta. To narzędzie do trwałej zmiany od środka, które w końcu sprawi, że odchudzanie stanie się łatwiejsze i naturalne.
+    </p>
+    <a href="#purchase" class="inline-block bg-yellow-400 text-black font-bold px-12 py-5 rounded-full shadow-xl hover:bg-yellow-300 transition transform hover:scale-105 text-xl">
+      Kup teraz i zacznij swoją transformację - 97 zł
+    </a>
+  </div>
+</section>
+
+
+<!-- Sekcja: FAQ (zaktualizowana) -->
+<section id="faq" class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-slate-50 py-20 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-purple-900 mb-10 text-center">Najczęstsze pytania (FAQ)</h2>
+    <div class="space-y-4" id="faqList">
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <button class="w-full text-left px-6 py-4 font-semibold text-gray-900 flex items-center justify-between faq-toggle">
+          <span>Czy muszę mieć wcześniejsze doświadczenie z hipnozą, żeby skorzystać z kursu?</span>
+          <span class="ml-4 text-purple-700">+</span>
+        </button>
+        <div class="px-6 pb-5 hidden faq-content">Nie – nagrania zostały stworzone w taki sposób, aby <strong>każdy</strong> mógł z nich skorzystać. Wystarczy, że znajdziesz spokojne miejsce i pozwolisz się poprowadzić.</div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <button class="w-full text-left px-6 py-4 font-semibold text-gray-900 flex items-center justify-between faq-toggle">
+          <span>Jak długo trwają nagrania?</span>
+          <span class="ml-4 text-purple-700">+</span>
+        </button>
+        <div class="px-6 pb-5 hidden faq-content">Każde nagranie trwa <strong>około 30 minut</strong> – tyle, ile potrzebujesz, by wejść w stan głębokiego relaksu i pozwolić podświadomości pracować nad zmianą.</div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <button class="w-full text-left px-6 py-4 font-semibold text-gray-900 flex items-center justify-between faq-toggle">
+          <span>Jak to działa? (Dlaczego to działa?)</span>
+          <span class="ml-4 text-purple-700">+</span>
+        </button>
+        <div class="px-6 pb-5 hidden faq-content">Hipnoza działa, ponieważ dociera bezpośrednio do <strong>Twojej podświadomości</strong> – tam, gdzie zapisane są nawyki i automatyczne reakcje.<br/> Dzięki temu łatwiej zmienić schematy myślenia i zachowania, które utrudniały Ci odchudzanie.<br/> Nagrania pomagają zmienić sposób myślenia o jedzeniu, wzmocnić poczucie kontroli i motywację do ruchu.<br/> W efekcie odchudzanie staje się naturalne i mniej stresujące, bo nie opiera się tylko na silnej woli.</div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <button class="w-full text-left px-6 py-4 font-semibold text-gray-900 flex items-center justify-between faq-toggle">
+          <span>Czy to jest bezpieczne?</span>
+          <span class="ml-4 text-purple-700">+</span>
+        </button>
+        <div class="px-6 pb-5 hidden faq-content"><strong>Tak.</strong> Nagrania hipnotyczne są w pełni bezpieczne – to naturalny stan głębokiego relaksu, w którym Twój umysł jest bardziej otwarty na pozytywne sugestie.<br/> Wielokrotnie używamy sformułowania „Wszystko co teraz usłyszysz będzie miało jedynie dobry i pozytywny wpływ na Ciebie, a wszystko niechciane odrzucisz”.<br/> Podczas hipnozy jesteś świadomy co się z Tobą dzieje i możesz w każdej chwili otworzyć oczy.</div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <button class="w-full text-left px-6 py-4 font-semibold text-gray-900 flex items-center justify-between faq-toggle">
+          <span>Czy mogę zmienić zachowanie na gorsze lub niechciane?</span>
+          <span class="ml-4 text-purple-700">+</span>
+        </button>
+        <div class="px-6 pb-5 hidden faq-content"><strong>Nie.</strong> Hipnoza nie może zmusić Cię do zrobienia czegoś sprzecznego z Twoimi wartościami.<br/> Jeśli Twój umysł świadomy uzna, że coś jest niezgodne z Twoim systemem wartości, po prostu to odrzuci.<br/> W nagraniach kierujesz uwagę na zdrowie, dobre samopoczucie i pozytywne zmiany.</div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <button class="w-full text-left px-6 py-4 font-semibold text-gray-900 flex items-center justify-between faq-toggle">
+          <span>Jak powinnam używać tego kursu?</span>
+          <span class="ml-4 text-purple-700">+</span>
+        </button>
+        <div class="px-6 pb-5 hidden faq-content">Najlepiej odsłuchiwać nagrania regularnie. Zaczynając od <strong>pierwszego nagrania</strong>. Wystarczy znaleźć spokojne miejsce, założyć słuchawki i dać się poprowadzić. Regularność jest kluczem do trwałej zmiany, a im częściej będziesz odsłuchiwać nagrań tym szybciej zobaczysz efekty.</div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <button class="w-full text-left px-6 py-4 font-semibold text-gray-900 flex items-center justify-between faq-toggle">
+          <span>Co jeśli na mnie to nie zadziała albo nie spełni moich oczekiwań?</span>
+          <span class="ml-4 text-purple-700">+</span>
+        </button>
+        <div class="px-6 pb-5 hidden faq-content">Masz pełną <strong>30-dniową gwarancję zwrotu pieniędzy</strong>. Jeśli uznasz, że kurs nie jest dla Ciebie – napisz maila, a zwrócimy Ci całą kwotę. <strong>Bez pytań, bez haczyków.</strong></div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <button class="w-full text-left px-6 py-4 font-semibold text-gray-900 flex items-center justify-between faq-toggle">
+          <span>Kiedy i jak otrzymam dostęp do kursu?</span>
+          <span class="ml-4 text-purple-700">+</span>
+        </button>
+        <div class="px-6 pb-5 hidden faq-content">Zaraz po opłaceniu zamówienia otrzymasz maila z linkiem do pobrania nagrań i bonusów. Masz do nich <strong>dostęp od razu</strong> i możesz korzystać bez ograniczeń czasowych.</div>
+      </div>
+    </div>
+    <div class="text-center mt-10">
+      <a href="#purchase" class="inline-block bg-yellow-400 text-black font-bold px-10 py-4 rounded-full shadow-lg hover:bg-yellow-300 transition transform hover:scale-105">
+        Kup teraz i zacznij swoją transformację - 97 zł
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+// Akordeon FAQ
+document.addEventListener('DOMContentLoaded', function () {
+  const toggles = document.querySelectorAll('#faq .faq-toggle');
+  toggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.parentElement.querySelector('.faq-content');
+      const sign = btn.querySelector('span:last-child');
+      const isHidden = content.classList.contains('hidden');
+      document.querySelectorAll('#faq .faq-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('#faq .faq-toggle span:last-child').forEach(s => s.textContent = '+');
+      if (isHidden) {
+        content.classList.remove('hidden');
+        sign.textContent = '–';
+      } else {
+        content.classList.add('hidden');
+        sign.textContent = '+';
+      }
+    });
+  });
+});
+</script>
+
+
+<footer class="bg-purple-900 text-white text-center py-6 border-t mt-12 bg-white">
+<p>© 2025 Hypnobalance&amp;.</p>
+</footer>
+</div></section></section></body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
