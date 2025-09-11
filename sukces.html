@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dziękujemy za zakup — HypnoSlim</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GA4 (PODMIEŃ G-XXXXXXX) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); // podmień
+  </script>
+
+  <!-- Meta Pixel (PODMIEŃ PIXEL_ID) -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'PIXEL_ID'); // podmień
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+</head>
+
+<body class="bg-gradient-to-br from-fuchsia-50 via-violet-50 to-purple-50 text-slate-900">
+  <header class="max-w-3xl mx-auto px-5 pt-10 pb-4 text-center">
+    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Dziękujemy! Płatność zakończona pomyślnie ✅</h1>
+    <p class="mt-3 text-slate-700">Na Twojego maila wysłaliśmy potwierdzenie zakupu i dostęp do kursu <b>HypnoSlim</b> oraz bonusów.</p>
+    <p class="text-slate-700">Jeśli nie widzisz wiadomości, sprawdź <b>SPAM/Oferty</b> lub wpisz w wyszukiwarkę maila: <i>HypnoSlim</i>.</p>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-5 pb-16">
+    <!-- Podsumowanie zamówienia -->
+    <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+      <h2 class="text-xl font-bold mb-4">Podsumowanie</h2>
+      <ul class="space-y-2 text-sm">
+        <li class="flex justify-between"><span>Kurs:</span> <b>HypnoSlim — 3 nagrania</b></li>
+        <li class="flex justify-between"><span>Bonusy (6 szt.):</span> <b>w pakiecie (0 zł)</b></li>
+        <li class="flex justify-between"><span>Cena:</span> <b><s>197 zł</s> → 97 zł</b></li>
+        <li class="flex justify-between"><span>Mail dostępu:</span> <b id="orderEmail">—</b></li>
+      </ul>
+      <p class="mt-3 text-xs text-slate-500">*E-mail może różnić się od widocznego powyżej, jeśli użyłeś autouzupełniania/przeglądarki — kluczowe jest to, co podałeś w Przelewy24.</p>
+    </section>
+
+    <!-- Natychmiastowe pobrania (opcjonalnie: zostaw jeśli chcesz dać od razu pliki) -->
+    <section class="mt-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+      <h2 class="text-xl font-bold mb-4">Pobierz materiały</h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <!-- PODMIEŃ LINKI DO PLIKÓW/ZIPÓW -->
+        <a href="LINK_DO/1-nagranie.zip" class="w-full text-center px-4 py-3 rounded-xl border hover:bg-slate-50">Nagranie 1 – Odkrycie przyczyn</a>
+        <a href="LINK_DO/2-nagranie.zip" class="w-full text-center px-4 py-3 rounded-xl border hover:bg-slate-50">Nagranie 2 – Zmiana nawyków</a>
+        <a href="LINK_DO/3-nagranie.zip" class="w-full text-center px-4 py-3 rounded-xl border hover:bg-slate-50">Nagranie 3 – Motywacja do ruchu</a>
+        <a href="LINK_DO/bonus-poranna-aktywacja.mp3" class="w-full text-center px-4 py-3 rounded-xl border hover:bg-slate-50">Bonus: Poranna Aktywacja Energii</a>
+        <a href="LINK_DO/afirmacje.pdf" class="w-full text-center px-4 py-3 rounded-xl border hover:bg-slate-50">Bonus: Afirmacje (PDF)</a>
+        <a href="LINK_DO/tracker-30-dni.pdf" class="w-full text-center px-4 py-3 rounded-xl border hover:bg-slate-50">Bonus: Tracker 30 dni (PDF)</a>
+        <a href="LINK_DO/karta-nawykow.pdf" class="w-full text-center px-4 py-3 rounded-xl border hover:bg-slate-50">Bonus: Karta nawyków (PDF)</a>
+        <a href="LINK_DO/ebook-psychologia.pdf" class="w-full text-center px-4 py-3 rounded-xl border hover:bg-slate-50">Bonus: E-book (PDF)</a>
+        <a href="LINK_DO/quiz.html" class="w-full text-center px-4 py-3 rounded-xl border hover:bg-slate-50">Bonus: Quiz HypnoSlim</a>
+      </div>
+      <p class="mt-3 text-xs text-slate-500">Jeśli wolisz otrzymać materiały tylko e-mailem — po prostu zignoruj linki powyżej.</p>
+    </section>
+
+    <!-- Co dalej -->
+    <section class="mt-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+      <h2 class="text-xl font-bold mb-3">Co dalej?</h2>
+      <ol class="list-decimal list-inside space-y-2 text-sm">
+        <li>Pobierz nagrania i bonusy albo zaczekaj na maila z linkami.</li>
+        <li>Znajdź spokojne miejsce i zacznij od <b>Nagrania 1</b>. Słuchaj 3–4 razy w tygodniu.</li>
+        <li>Używaj <b>Trackera</b> i <b>Karty nawyków</b> — to przyspiesza efekty.</li>
+      </ol>
+    </section>
+
+    <!-- Pomoc -->
+    <section class="mt-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+      <h2 class="text-xl font-bold mb-3">Potrzebujesz pomocy?</h2>
+      <p class="text-sm">Napisz: <a href="mailto:support@hypnobalance.pl" class="underline">support@hypnobalance.pl</a> (odpisujemy szybko). Do maila dołącz numer transakcji z Przelewy24.</p>
+      <p class="text-xs mt-2 text-slate-500">Pro tip: dodaj nasz adres do zaufanych nadawców, żeby wiadomości nie wpadały do SPAMu.</p>
+      <div class="mt-5 flex gap-3">
+        <a href="/" class="px-4 py-2 rounded-lg border hover:bg-slate-50">Wróć na stronę główną</a>
+        <a href="/regulamin.html" class="px-4 py-2 rounded-lg border hover:bg-slate-50">Regulamin</a>
+        <a href="/polityka-prywatnosci.html" class="px-4 py-2 rounded-lg border hover:bg-slate-50">Polityka prywatności</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Zdarzenia konwersji (odpalane 1x po wejściu na stronę) -->
+  <script>
+    // Meta Purchase
+    try { if (window.fbq) fbq('track', 'Purchase', {value: 97.00, currency: 'PLN'}); } catch(e){}
+
+    // GA4 Purchase (prosty event; rozbudujesz wg potrzeb)
+    try { if (window.gtag) gtag('event', 'purchase', {value: 97.00, currency: 'PLN'}); } catch(e){}
+
+    // (opcjonalnie) podłap e-mail z parametru URL ?email=
+    const params = new URLSearchParams(location.search);
+    const em = params.get('email');
+    if (em) document.getElementById('orderEmail').textContent = em;
+  </script>
+</body>
+</html>

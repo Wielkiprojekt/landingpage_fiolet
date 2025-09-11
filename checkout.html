@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HypnoSlim — Podsumowanie i płatność</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GA4 (PODMIEŃ G-XXXXXXX) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); // podmień
+  </script>
+
+  <!-- Meta Pixel (PODMIEŃ PIXEL_ID) -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'PIXEL_ID'); // podmień
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+    .checklist li::marker{content:"✔  ";}
+  </style>
+</head>
+<body class="bg-gradient-to-br from-violet-50 via-fuchsia-50 to-rose-50 text-slate-900">
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-4">
+    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">HypnoSlim — hipnoza na skuteczne odchudzanie</h1>
+    <p class="mt-2 text-slate-700">Zamówienie i płatność. Wypełnij poniżej i kliknij „Zapłać 97 zł”.</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 pb-16 grid md:grid-cols-5 gap-6">
+    <!-- LEWA KOLUMNA: korzyści -->
+    <section class="md:col-span-3 bg-white/80 backdrop-blur rounded-2xl border border-slate-200 shadow-sm p-6">
+      <h2 class="text-xl font-bold">Co otrzymujesz</h2>
+      <ul class="mt-3 space-y-1 checklist pl-5">
+        <li>3 nagrania hipnotyczne: odkrycie blokad, zmiana nawyków, motywacja do ruchu</li>
+        <li>5 bonusów o łącznej wartości <b>325 zł</b> — 0 zł dla Ciebie</li>
+        <li>Dostęp natychmiast po płatności + materiały do pobrania</li>
+        <li>30-dniowa gwarancja satysfakcji — pełny zwrot bez pytań</li>
+      </ul>
+
+      <div class="mt-6 grid sm:grid-cols-2 gap-4 text-sm">
+        <div class="p-4 rounded-xl border">
+          <h3 class="font-semibold">W pakiecie dostajesz:</h3>
+          <ul class="mt-2 space-y-1 list-disc list-inside">
+            <li>Nagranie 1 — Odkrycie przyczyn trudności w odchudzaniu</li>
+            <li>Nagranie 2 — Zmiana nawyków żywieniowych</li>
+            <li>Nagranie 3 — Motywacja do ruchu i aktywności</li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-xl border">
+          <h3 class="font-semibold">Bonusy (0 zł):</h3>
+          <ul class="mt-2 space-y-1 list-disc list-inside">
+            <li>Poranna Aktywacja Energii (audio)</li>
+            <li>Afirmacje na każdy dzień (PDF)</li>
+            <li>Tracker 30 dni (PDF)</li>
+            <li>Karta zmiany nawyków (PDF)</li>
+            <li>E-book „Psychologia skutecznego odchudzania” (PDF)</li>
+            <li>Quiz „Co blokuje Twoje odchudzanie?” </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 p-4 rounded-xl bg-slate-50 border text-sm">
+        <p><b>Efekty, których możesz oczekiwać:</b> mniej wewnętrznego sabotażu, naturalna zmiana nawyków, większa kontrola nad jedzeniem, więcej motywacji do ruchu i spokój w głowie.</p>
+      </div>
+    </section>
+
+    <!-- PRAWA KOLUMNA: zamówienie -->
+    <aside class="md:col-span-2 bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+      <h2 class="text-xl font-bold">Podsumowanie zamówienia</h2>
+
+      <div class="mt-4 space-y-2 text-sm">
+        <div class="flex justify-between"><span>Kurs HypnoSlim (3 nagrania)</span><span><s>197 zł</s></span></div>
+        <div class="flex justify-between"><span>Bonusy (5 szt.)</span><span><s>325 zł</s> 0 zł</span></div>
+        <hr class="my-2">
+        <div class="flex justify-between text-lg font-bold"><span>Do zapłaty</span><span>97 zł</span></div>
+      </div>
+
+      <form class="mt-6 space-y-3" onsubmit="return goPay(event)">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <label class="block text-sm"><span>Imię</span>
+            <input required type="text" id="firstName" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Jan" minlength="2">
+          </label>
+          <label class="block text-sm"><span>Nazwisko</span>
+            <input required type="text" id="lastName" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Kowalski" minlength="2">
+          </label>
+        </div>
+        <label class="block text-sm">
+          <span>E-mail do dostawy materiałów</span>
+          <input required type="email" id="email" class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="twoj@email.pl" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Podaj poprawny adres e-mail">
+        </label>
+
+        <!-- Zgody -->
+        <label class="flex items-start gap-3 text-xs">
+          <input required type="checkbox" class="mt-1">
+          <span>Akceptuję <a href="/regulamin.html" class="underline">Regulamin</a> i <a href="/polityka-prywatnosci.html" class="underline">Politykę prywatności</a>. Wyrażam zgodę na realizację zamówienia produktu cyfrowego.</span>
+        </label>
+
+        <!-- CTA -->
+        <button id="payBtn" class="w-full px-5 py-3 rounded-xl font-semibold bg-fuchsia-600 hover:bg-fuchsia-700 text-white shadow">
+          Zapłać 97 zł
+        </button>
+
+        <p class="text-[11px] text-slate-500">Szyfrowane, bezpieczne płatności Przelewy24. Masz 30 dni gwarancji zwrotu.</p>
+      </form>
+
+      <!-- Gwarancja -->
+      <div class="mt-5 p-3 rounded-lg bg-slate-50 border text-xs">
+        ✅ 30 dni gwarancji — jeśli kurs nie spełni oczekiwań, piszesz maila i zwracamy pełną kwotę.
+      </div>
+    </aside>
+  </main>
+
+  <footer class="max-w-5xl mx-auto px-6 pb-10 text-[11px] text-slate-500/80 flex flex-wrap gap-3 justify-between">
+    <div class="opacity-70 space-x-4">
+      <a href="/regulamin.html" class="hover:underline">Regulamin</a>
+      <a href="/polityka-prywatnosci.html" class="hover:underline">Polityka prywatności</a>
+    </div>
+    <span class="opacity-60">© HypnoBalance</span>
+  </footer>
+
+  <script>
+    // PODMIEŃ na swój stały link P24 (lub generowany dynamicznie)
+    const P24_LINK = "WSTAW_TUTAJ_LINK_Z_PRZELEWY24";
+
+    function goPay(e){
+      e.preventDefault();
+      const em = document.getElementById('email').value.trim();
+      if (!em) return false;
+
+      // Event rozpoczęcia checkoutu
+      try { if (window.fbq) fbq('track', 'InitiateCheckout'); } catch(e){}
+      try { if (window.gtag) gtag('event', 'begin_checkout'); } catch(e){}
+
+      // Dopnij e-mail do linku powrotu (opcjonalnie)
+      const url = new URL(P24_LINK);
+      // jeśli masz możliwość dodać parametry do returnURL w P24, rozważ przekazanie e-maila tam
+      url.searchParams.set('email', em);
+
+      window.location.href = url.toString();
+      return false;
+    }
+  </script>
+</body>
+</html>
